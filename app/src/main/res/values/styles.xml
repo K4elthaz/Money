@@ -1,8 +1,8 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!--<item name="android:windowSplashScreenBackground">@color/color_yellow</item>-->
-        <item name="android:windowBackground">@drawable/gradient_background</item>
+        <item name="android:windowBackground">@color/color_white</item>
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/purple_700</item>
 <!--        <item name="colorPrimaryDark">@color/color_yellow</item>-->

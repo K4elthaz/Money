@@ -7,4 +7,6 @@
     <color name="color_yellow">#edc53b</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="color_gray">#D9DDDC</color>
+    <color name="color_green">#3BD8AD</color>
+    <color name="color_green_transparent">#803BD8AD</color>
 </resources>

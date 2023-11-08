@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Cure &amp; Care</string>
+    <string name="app_name">M-Detect</string>
     <string name="description_en">Identify any dog breed with just one click! CanineCam uses cutting-edge AI technology to analyze a photo of a dog and reveal its breed in seconds. Never wonder about a dog\'s breed again, with CanineCam in your pocket.</string>
     <string name="description_it">Identifica qualsiasi razza di cane con un solo clic! CanineCam utilizza la tecnologia AI di ultima generazione per analizzare una foto di un cane e rivelare la sua razza in pochi secondi. Non chiederti mai più quale sia la razza di un cane, con CanineCam sempre a portata di mano.</string>
     <string name="image_view">Image View</string>
@@ -38,4 +38,11 @@
     <string name="scan_button_text">Load Image</string>
     <string name="skin_type_button_text">View Skin Type</string>
     <string name="doctor_schedule_button_text">View Doctor Schedule</string>
+    <string name="FirstPageWord">A MOBILE BASED APPLICATION FOR DETECTING COUNTERFEIT FOREIGN EXCHANGE CURRENCIES THROUGH IMAGE PROCESSING</string>
+
+    <string name="about">ABOUT</string>
+    <string name="userguide">USER GUIDE</string>
+    <string name="developers">DEVELOPERS</string>
+    <string name="convert_currency">*convert currency</string>
+    <string name="info">INFORMATION:</string>
 </resources>

@@ -5,96 +5,229 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="25dp"
-    tools:context="org.pytorch.demo.objectdetection.MainActivity">
+    tools:context="org.pytorch.demo.objectdetection.MainActivity"
+    android:background="@drawable/bg2">
 
+    <LinearLayout
+        android:id="@+id/activitymanuallayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
-        android:adjustViewBounds="true"
-        android:background="@color/color_black"
-        android:contentDescription="@string/image_view"
-        app:layout_constraintDimensionRatio="1:1"
+        <ImageView
+            android:id="@+id/sidemenubar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            android:src="@drawable/baseline_menu_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activitymanuallayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout">
 
-    <org.pytorch.demo.objectdetection.ResultView
-        android:id="@+id/resultView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/homebtnimg"
+            android:layout_width="109dp"
+            android:layout_height="40dp"
+            android:src="@drawable/home1"
+            android:layout_marginStart="15dp"/>
 
-    <ProgressBar
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/backbtnimg"
+            android:layout_width="109dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back1"
+            android:layout_marginEnd="15dp"/>
+
+    </LinearLayout>
+
+
+        <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/verticalBtnsBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
 
-    <TextView
-        android:id="@+id/textViewDetect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text=""
-        android:textColor="@color/color_white"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/verticalBtnsBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+<!--    app:layout_constraintBottom_toTopOf="@id/verticalBtnsBox"-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="351dp"-->
+<!--        android:layout_height="157dp"-->
+<!--        android:layout_marginTop="140dp"-->
+<!--        android:adjustViewBounds="true"-->
+<!--        android:contentDescription="@string/image_view"-->
+<!--        app:layout_constraintDimensionRatio="1:1"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.382"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <!--    <TextView-->
+<!--        android:id="@+id/textViewDetect"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:text=""-->
+<!--        android:textColor="@color/color_white"-->
+<!--        android:textSize="24dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
+<!--&lt;!&ndash;SA TEXTVIEW SA TAAS TO NAKALAGAY&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintBottom_toTopOf="@id/verticalBtnsBox"&ndash;&gt;-->
+
 
     <LinearLayout
         android:id="@+id/verticalBtnsBox"
-        android:layout_width="406dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingHorizontal="10dp"
+        android:layout_marginTop="10dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/detectButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/detect"
-            android:onClick="onDetectButtonClick"
-            android:background="@drawable/rounded_button_background"
-            tools:ignore="OnClick" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1">
 
 
         <!--        <Button-->
         <!--            android:id="@+id/liveButton"-->
         <!--            android:layout_width="match_parent"-->
         <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="@string/live"-->
         <!--            android:layout_marginTop="5dp"-->
-        <!--            android:background="@drawable/rounded_button_background"/>-->
+        <!--            android:background="@drawable/rounded_button_background"-->
+        <!--            android:text="@string/live"-->
+        <!--            android:visibility="gone" />-->
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="351dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/image_view"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.382"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <org.pytorch.demo.objectdetection.ResultView
+            android:id="@+id/resultView"
+            android:layout_width="352dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/captureimage1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.393"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FRONT OF BANK NOTE"
+            android:textColor="@color/color_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="257dp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="351dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="320dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/image_view"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.383"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <org.pytorch.demo.objectdetection.ResultView
+            android:id="@+id/resultView1"
+            android:layout_width="350dp"
+            android:layout_height="159dp"
+            android:layout_marginTop="320dp"
+            android:background="@drawable/captureimage1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.377"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK OF BANK NOTE"
+            android:textColor="@color/color_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="433dp" />
+
+        <!--        android:text="@string/detect"-->
+
+
+        <Button
+            android:id="@+id/detectButton"
+            android:layout_width="224dp"
+            android:layout_height="83dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/scan1"
+            android:onClick="onDetectButtonClick"
+            app:layout_constraintBottom_toTopOf="@+id/selectButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints,OnClick" />
 
         <Button
             android:id="@+id/selectButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/image"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/rounded_button_background"/>
+            android:layout_width="224dp"
+            android:layout_height="83dp"
+            android:background="@drawable/upload1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="580dp" />
+        <!--    android:text="@string/image"-->
 
     </LinearLayout>
 

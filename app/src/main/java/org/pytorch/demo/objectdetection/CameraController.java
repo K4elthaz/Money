@@ -53,7 +53,7 @@ public class CameraController extends View implements ImageAnalysis.Analyzer {
 
         try {
             if (mModule == null) {
-                mModule = LiteModuleLoader.load(MainDetectActivity.assetFilePath(context, "yolo_dogs_breeds.torchscript.ptl"));
+                mModule = LiteModuleLoader.load(MainDetectActivity.assetFilePath(context, "best.torchscript.ptl"));
             }
         } catch (IOException e) {
             Log.e("Object Detection", "Error reading assets", e);
