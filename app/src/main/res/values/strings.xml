@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Cure &amp; Care</string>
+    <string name="description_en">Identify any dog breed with just one click! CanineCam uses cutting-edge AI technology to analyze a photo of a dog and reveal its breed in seconds. Never wonder about a dog\'s breed again, with CanineCam in your pocket.</string>
+    <string name="description_it">Identifica qualsiasi razza di cane con un solo clic! CanineCam utilizza la tecnologia AI di ultima generazione per analizzare una foto di un cane e rivelare la sua razza in pochi secondi. Non chiederti mai più quale sia la razza di un cane, con CanineCam sempre a portata di mano.</string>
+    <string name="image_view">Image View</string>
+    <string name="detect">Detect</string>
+    <string name="run_model">Running the model...</string>
+    <string name="restart">Restart</string>
+    <string name="select">Load new photo</string>
+    <string name="live">Open Camera</string>
+    <string name="image">Upload New Image</string>
+
+    <string name="result">Recommended Skincare Product</string>
+    <string name="app_login"><font color="#FF6200EE">Cure &amp; Care</font></string>
+    <string name="app_home">Welcome to <b><font color="#FF6200EE">Cure &amp; Care</font></b></string>
+    <string name="login_button_text">Login</string>
+    <string name="register_button_text">Sign Up</string>
+    <string name="username_hint">Username</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_account">Don\'t have an account? <b><font color="#FFFFFF">Sign Up</font></b></string>
+    <string name="already_have_account">Already have an account? <b><font color="#FFFFFFFF">Login</font></b></string>
+
+    <string name="send_email_auth">Send</string>
+    <string name="forgot_description">
+        Enter the email address associated with your account.
+    </string>
+    <string name="forgot_description2">
+        We will email you the process to reset your password.
+    </string>
+    <string name="description">
+        <font fgcolor="#D9DDDC">
+            <i>Discover personalized skincare recommendations and expert product suggestions with our app. Get tailored skincare advice and professional image-based product classifications at your fingertips</i>
+        </font>
+    </string>
+    <string name="scan_button_text">Load Image</string>
+    <string name="skin_type_button_text">View Skin Type</string>
+    <string name="doctor_schedule_button_text">View Doctor Schedule</string>
+</resources>
