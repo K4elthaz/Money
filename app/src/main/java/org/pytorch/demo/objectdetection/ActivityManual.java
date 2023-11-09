@@ -103,6 +103,9 @@ public class ActivityManual extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         // Check permission for loading images from the gallery
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -144,36 +147,6 @@ public class ActivityManual extends AppCompatActivity {
         mResultView.setVisibility(View.INVISIBLE);
         mResultView.getLayoutParams().height = mImageView.getHeight();
 
-        // Hide previewView
-//        previewView = findViewById(R.id.prevView);
-//        previewView.getLayoutParams().height = mImageView.getHeight();
-//        previewView.setVisibility(View.INVISIBLE);
-//
-//        // Test default images
-//        try {
-//            AssetManager assetManager = getAssets();
-//            mTestImages = assetManager.list("examples");
-//        } catch (IOException e) {
-//            Log.e("", "Problems with examples images.");
-//        }
-//        buttonTest = findViewById(R.id.testButton);
-//        buttonTest.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if (mTestImages == null) return;
-//                mResultView.setVisibility(View.INVISIBLE);
-//                mImageIndex = (mImageIndex + 1) % mTestImages.length;
-//                String imageName = mTestImages[mImageIndex];
-//                Log.i("EXAMPLE LOADED", imageName);
-//                try {
-//                    textViewDetection.setText("");
-//                    mBitmap = BitmapFactory.decodeStream(getAssets().open(imagesPath + imageName));
-//                    mImageView.setImageBitmap(mBitmap);
-//                } catch (IOException e) {
-//                    Log.e("Object Detection", "Error reading assets", e);
-//                    finish();
-//                }
-//            }
-//        });
 
         // Load image from the gallery
         final Button buttonSelect = findViewById(R.id.selectButton);
@@ -266,36 +239,9 @@ public class ActivityManual extends AppCompatActivity {
             finish();
         }
 
-        LifecycleOwner lifecycleOwner = this;
-        cameraController = new CameraController(this);
-        // Open camera and detect
-//        final Button buttonLive = findViewById(R.id.liveButton);
-//        buttonLive.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if (!cameraController.is_camera_open) {
-//                    cameraController.startCamera(previewView, mImageView, mResultView, lifecycleOwner);
-//                    buttonLive.setText("Close Camera");
-//                } else {
-//                    cameraController.closeCamera();
-//                    loadDefaultImage();
-//                    buttonLive.setText(getString(R.string.live));
-//                    textViewDetection.setText("");
-//                }
-//            }
-//        });
     }
 
-//    private void loadDefaultImage() {
-//        // Load the default image
-//        try {
-//            String defaultImageName = "test.jpg";
-//            mBitmap = BitmapFactory.decodeStream(getAssets().open(defaultImageName));
-//        } catch (IOException e) {
-//            Log.e("Object Detection", "Error reading assets", e);
-//            finish();
-//        }
-//        mImageView.setImageBitmap(mBitmap);
-//    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

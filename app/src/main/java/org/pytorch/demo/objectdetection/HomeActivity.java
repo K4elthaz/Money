@@ -5,15 +5,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -25,33 +21,14 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-//        NavigationView navigationView = findViewById(R.id.navigationView);
-//        ImageView sidemenubar = findViewById(R.id.sidemenubar);
-//
-//// Set initial visibility of NavigationView to GONE
-//        navigationView.setVisibility(View.GONE);
-//
-//// Set click listener for sidemenubar
-//        sidemenubar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Toggle visibility of NavigationView
-//                if (navigationView.getVisibility() == View.VISIBLE) {
-//                    navigationView.setVisibility(View.GONE);
-//                } else {
-//                    navigationView.setVisibility(View.VISIBLE);
-//                }
-//            }
-//        });
-
         NavigationView navigationView = findViewById(R.id.navigationView);
         ImageView sidemenubar = findViewById(R.id.sidemenubar);
         View overlay = findViewById(R.id.overlay);
 
-// Set initial visibility of NavigationView to GONE
+        // Set initial visibility of NavigationView to GONE
         navigationView.setVisibility(View.GONE);
 
-// Set click listener for sidemenubar
+        // Set click listener for sidemenubar
         sidemenubar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-// Set click listener for the overlay
+        // Set click listener for the overlay
         overlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +52,6 @@ public class HomeActivity extends AppCompatActivity {
                 overlay.setVisibility(View.GONE);
             }
         });
-
-
 
         ImageView convertButton = findViewById(R.id.convertImgBtn);
 
@@ -110,6 +85,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -123,7 +99,4 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
     }
-
-
-
 }
