@@ -9,10 +9,10 @@
 
 
     <LinearLayout
-        android:id="@+id/activitymanuallayout"
+        android:id="@+id/activitycapturelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="end"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/activitymanuallayout1"
+        android:id="@+id/activitycapturelayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout">
+        app:layout_constraintTop_toBottomOf="@+id/activitycapturelayout">
 
         <ImageView
             android:id="@+id/homebtnimg"
@@ -91,18 +91,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1" />
+        app:layout_constraintTop_toBottomOf="@+id/activitycapturelayout1" />
 
-    <org.pytorch.demo.objectdetection.ResultView
-        android:id="@+id/resultView"
-        android:layout_width="360dp"
-        android:layout_height="164dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1" />
+    <!--Ni comment out ko lng muna to gawa ng mag cracrash siya since naka connect yung org.resultview na naka comment-->
+    <!--    sa ResultView.JAVA-->
+
+<!--    <org.pytorch.demo.objectdetection.ResultView-->
+<!--        android:id="@+id/resultView"-->
+<!--        android:layout_width="360dp"-->
+<!--        android:layout_height="164dp"-->
+<!--        android:layout_marginTop="56dp"-->
+<!--        app:layout_constraintDimensionRatio="1:1"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.49"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/activitycapturelayout1" />-->
 
     <!--    HIDE VISIBILITY IF the resultview is not empty-->
     <TextView
@@ -149,17 +152,19 @@
             app:layout_constraintTop_toBottomOf="@+id/frntbankNote" />
 
         <!--    HIDE VISIBILITY IF the resultview is not empty-->
+<!--Ni comment out ko lng muna to gawa ng mag cracrash siya since naka connect yung org.resultview na naka comment-->
+<!--    sa ResultView.JAVA-->
 
-        <org.pytorch.demo.objectdetection.ResultView
-            android:id="@+id/resultView1"
-            android:layout_width="360dp"
-            android:layout_height="164dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frntbankNote" />
+<!--        <org.pytorch.demo.objectdetection.ResultView-->
+<!--            android:id="@+id/resultView1"-->
+<!--            android:layout_width="360dp"-->
+<!--            android:layout_height="164dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintDimensionRatio="1:1"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.49"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/frntbankNote" />-->
 
     <TextView
         android:id="@+id/textView4"
@@ -222,7 +227,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="right"
-        app:constraint_referenced_ids="activitymanuallayout, activitymanuallayout1, verticalBtnsBox"/>
+        app:constraint_referenced_ids="activitycapturelayout, activitycapturelayout1, verticalBtnsBox"/>
 
     <View
         android:id="@+id/overlay"
