@@ -36,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,4 +62,43 @@
             android:layout_marginEnd="15dp"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/boxed"
+        android:layout_width="365dp"
+        android:layout_height="234dp"
+        android:background="@drawable/rounded_green_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/developerslayout1"
+        app:layout_constraintVertical_bias="0.353" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="developerslayout, developerslayout1" />
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:clickable="true"
+        android:visibility="gone" />
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        android:background="@color/color_green_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/nav_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

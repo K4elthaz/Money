@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/imageViewIcon1"
+        android:layout_width="205dp"
+        android:layout_height="75dp"
+        android:src="@drawable/userguide1"
+        android:clickable="true" />
+
+</LinearLayout>
+
+<!-- custom_nav_item.xml -->
+<!--<RelativeLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:clickable="true">-->
+
+<!--    &lt;!&ndash; Your centered image view &ndash;&gt;-->
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="205dp"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:src="@drawable/userguide1"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:clickable="true"/>-->
+
+<!--    &lt;!&ndash; Other views or elements as needed &ndash;&gt;-->
+
+<!--</RelativeLayout>-->
+

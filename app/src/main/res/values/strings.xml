@@ -45,4 +45,7 @@
     <string name="developers">DEVELOPERS</string>
     <string name="convert_currency">*convert currency</string>
     <string name="info">INFORMATION:</string>
+    <string name="frontbank_notetxt">FRONT OF BANK NOTE</string>
+    <string name="backbank_notetxt">BACK OF BANK NOTE</string>
+
 </resources>

@@ -68,13 +68,14 @@
         android:layout_width="374dp"
         android:layout_height="260dp"
         android:layout_marginTop="80dp"
-        android:background="@color/color_green"
+        android:background="@drawable/rounded_green_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activityresutltscan1"
         app:layout_constraintVertical_bias="0.014" />
 
+    <!--    REPLACE RIGHT AND WRONG SA SCR -->
     <ImageView
         android:id="@+id/rightorwrongicon"
         android:layout_width="75dp"
@@ -107,9 +108,27 @@
         android:text="Classification:"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview12" />
+
+
+    <!--    CLASSIFCATION TEXT RESULT-->
+
+    <TextView
+        android:id="@+id/classificationResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/color_black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toEndOf="@+id/textview14"
         app:layout_constraintTop_toBottomOf="@+id/textview12" />
 
     <TextView
@@ -125,11 +144,29 @@
         app:layout_constraintTop_toBottomOf="@+id/textview14"
         tools:layout_editor_absoluteX="91dp" />
 
+
+    <!--    CURRENCY TEXT RESULT-->
+
+    <TextView
+        android:id="@+id/currencyResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/color_black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toEndOf="@+id/textview15"
+        app:layout_constraintTop_toBottomOf="@+id/classificationResult" />
+
     <TextView
         android:id="@+id/textview16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Value:"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -138,12 +175,33 @@
         app:layout_constraintTop_toBottomOf="@+id/textview15"
         tools:layout_editor_absoluteX="117dp" />
 
+    <!--    VALUE TEXT RESULT-->
+
+    <TextView
+        android:id="@+id/valueResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/color_black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toEndOf="@+id/textview16"
+        app:layout_constraintTop_toBottomOf="@+id/currencyResult" />
+
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="139dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="88dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/convert2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="486dp" />
+        app:layout_constraintTop_toBottomOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

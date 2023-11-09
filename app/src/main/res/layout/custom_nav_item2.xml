@@ -10,7 +10,7 @@
         android:id="@+id/imageViewIcon1"
         android:layout_width="205dp"
         android:layout_height="75dp"
-        android:background="@drawable/about1"
+        android:src="@drawable/developers1"
         android:clickable="true" />
 
 </LinearLayout>

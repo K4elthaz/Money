@@ -23,8 +23,7 @@ public class FirstPage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(FirstPage.this, HomeActivity.class);
                 startActivity(intent);
-
-
+                finish();
             }
         });
 

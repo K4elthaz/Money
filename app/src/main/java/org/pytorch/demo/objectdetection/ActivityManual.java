@@ -24,6 +24,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,11 +32,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
+
 import org.pytorch.IValue;
 import org.pytorch.LiteModuleLoader;
 import org.pytorch.Module;
 import org.pytorch.Tensor;
 import org.pytorch.torchvision.TensorImageUtils;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -118,7 +122,7 @@ public class ActivityManual extends AppCompatActivity {
         textViewDetection = findViewById(R.id.textViewDetect);
 
         // Show image
-        mImageView = findViewById(R.id.imageView);
+        mImageView = findViewById(R.id.frntbankNote);
 
         // Retrieve the captured image from the intent
         Bitmap capturedImage = getIntent().getParcelableExtra("captured_image");
@@ -144,36 +148,6 @@ public class ActivityManual extends AppCompatActivity {
         mResultView.setVisibility(View.INVISIBLE);
         mResultView.getLayoutParams().height = mImageView.getHeight();
 
-        // Hide previewView
-//        previewView = findViewById(R.id.prevView);
-//        previewView.getLayoutParams().height = mImageView.getHeight();
-//        previewView.setVisibility(View.INVISIBLE);
-//
-//        // Test default images
-//        try {
-//            AssetManager assetManager = getAssets();
-//            mTestImages = assetManager.list("examples");
-//        } catch (IOException e) {
-//            Log.e("", "Problems with examples images.");
-//        }
-//        buttonTest = findViewById(R.id.testButton);
-//        buttonTest.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if (mTestImages == null) return;
-//                mResultView.setVisibility(View.INVISIBLE);
-//                mImageIndex = (mImageIndex + 1) % mTestImages.length;
-//                String imageName = mTestImages[mImageIndex];
-//                Log.i("EXAMPLE LOADED", imageName);
-//                try {
-//                    textViewDetection.setText("");
-//                    mBitmap = BitmapFactory.decodeStream(getAssets().open(imagesPath + imageName));
-//                    mImageView.setImageBitmap(mBitmap);
-//                } catch (IOException e) {
-//                    Log.e("Object Detection", "Error reading assets", e);
-//                    finish();
-//                }
-//            }
-//        });
 
         // Load image from the gallery
         final Button buttonSelect = findViewById(R.id.selectButton);
@@ -206,7 +180,7 @@ public class ActivityManual extends AppCompatActivity {
             public void onClick(View v) {
                 mButtonDetect.setEnabled(false);
                 mProgressBar.setVisibility(ProgressBar.VISIBLE);
-                mButtonDetect.setText(getString(R.string.run_model));
+//                mButtonDetect.setText(getString(R.string.run_model));
                 // Scale image to 320x320
                 mImgScaleX = (float) mBitmap.getWidth() / PrePostProcessor.mInputWidth;
                 mImgScaleY = (float) mBitmap.getHeight() / PrePostProcessor.mInputHeight;
@@ -237,7 +211,7 @@ public class ActivityManual extends AppCompatActivity {
                             @Override
                             public void run() {
                                 mButtonDetect.setEnabled(true);
-                                mButtonDetect.setText(getString(R.string.detect));
+//                                mButtonDetect.setText(getString(R.string.detect));
                                 mProgressBar.setVisibility(ProgressBar.INVISIBLE);
                                 mResultView.setResults(results);
                                 mResultView.invalidate();
@@ -266,36 +240,138 @@ public class ActivityManual extends AppCompatActivity {
             finish();
         }
 
-        LifecycleOwner lifecycleOwner = this;
-        cameraController = new CameraController(this);
-        // Open camera and detect
-//        final Button buttonLive = findViewById(R.id.liveButton);
-//        buttonLive.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if (!cameraController.is_camera_open) {
-//                    cameraController.startCamera(previewView, mImageView, mResultView, lifecycleOwner);
-//                    buttonLive.setText("Close Camera");
-//                } else {
-//                    cameraController.closeCamera();
-//                    loadDefaultImage();
-//                    buttonLive.setText(getString(R.string.live));
-//                    textViewDetection.setText("");
-//                }
-//            }
-//        });
+        NavigationView navigationView = findViewById(R.id.navigationView);
+        ImageView sidemenubar = findViewById(R.id.sidemenubar);
+        View overlay = findViewById(R.id.overlay);
+        ImageView homeBtn = findViewById(R.id.homebtnimg);
+        ImageView backBtn = findViewById(R.id.backbtnimg);
+        Button dBtn = findViewById(R.id.detectButton);
+        Button sBtn = findViewById(R.id.selectButton);
+        ImageView frnNT = findViewById(R.id.frntbankNote);
+        TextView txt1 = findViewById(R.id.textView3);
+        ImageView bckNT = findViewById(R.id.backbankNote);
+        TextView txt2 = findViewById(R.id.textView4);
+
+        // Set initial visibility of NavigationView to GONE
+        navigationView.setVisibility(View.GONE);
+
+        // Set item click listener
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // Handle item click here
+                switch (item.getItemId()) {
+                    case R.id.menu_item1:
+                        // Open activity for menu_item1
+                        startActivity(new Intent(ActivityManual.this, AboutActivity.class));
+                        break;
+                    case R.id.menu_item2:
+                        // Open activity for menu_item2
+                        startActivity(new Intent(ActivityManual.this, UserGuideActivity.class));
+                        break;
+                    case R.id.menu_item3:
+                        // Open activity for menu_item3
+                        startActivity(new Intent(ActivityManual.this, DevelopersActivity.class));
+                        break;
+                }
+
+                return true;
+            }
+        });
+
+// Set click listener for sidemenubar
+        sidemenubar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Toggle visibility of NavigationView
+                if (navigationView.getVisibility() == View.VISIBLE) {
+                    navigationView.setVisibility(View.GONE);
+                    overlay.setVisibility(View.GONE);
+                    // Show the buttons and sidemenubar when closing sidemenubar
+                    sidemenubar.setVisibility(View.VISIBLE);
+                } else {
+                    navigationView.setVisibility(View.VISIBLE);
+                    overlay.setVisibility(View.VISIBLE);
+                    // Hide the buttons and sidemenubar when opening sidemenubar
+                    sidemenubar.setVisibility(View.GONE);
+                }
+            }
+        });
+
+// Set click listener for sidemenubar
+        sidemenubar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Toggle visibility of NavigationView
+                if (navigationView.getVisibility() == View.VISIBLE) {
+                    navigationView.setVisibility(View.GONE);
+                    overlay.setVisibility(View.GONE);
+                    // Show the buttons and sidemenubar when closing sidemenubar
+                    homeBtn.setVisibility(View.VISIBLE);
+                    backBtn.setVisibility(View.VISIBLE);
+                    dBtn.setVisibility(View.VISIBLE);
+                    sBtn.setVisibility(View.VISIBLE);
+                    frnNT.setVisibility(View.VISIBLE);
+                    txt1.setVisibility(View.VISIBLE);
+                    sidemenubar.setVisibility(View.VISIBLE);
+                } else {
+                    navigationView.setVisibility(View.VISIBLE);
+                    overlay.setVisibility(View.VISIBLE);
+                    // Hide the buttons and sidemenubar when opening sidemenubar
+                    homeBtn.setVisibility(View.GONE);
+                    backBtn.setVisibility(View.GONE);
+                    dBtn.setVisibility(View.GONE);
+                    sBtn.setVisibility(View.GONE);
+                    frnNT.setVisibility(View.GONE);
+                    txt1.setVisibility(View.GONE);
+                    sidemenubar.setVisibility(View.GONE);
+                }
+            }
+        });
+
+// Set click listener for the overlay
+        overlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Close NavigationView and hide the overlay
+                navigationView.setVisibility(View.GONE);
+                overlay.setVisibility(View.GONE);
+                // Show the buttons and sidemenubar when closing sidemenubar from overlay
+                homeBtn.setVisibility(View.VISIBLE);
+                backBtn.setVisibility(View.VISIBLE);
+                dBtn.setVisibility(View.VISIBLE);
+                sBtn.setVisibility(View.VISIBLE);
+                frnNT.setVisibility(View.VISIBLE);
+                txt1.setVisibility(View.VISIBLE);
+                sidemenubar.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+//        HOME AND BACK BTN FUNCTION
+        ImageView homeButton = findViewById(R.id.homebtnimg);
+        ImageView backButton = findViewById(R.id.backbtnimg);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navigate to HomeActivity
+                Intent intent = new Intent(ActivityManual.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Go back to the previous activity (assuming it's HomeActivity)
+                onBackPressed();
+            }
+        });
+
     }
 
-//    private void loadDefaultImage() {
-//        // Load the default image
-//        try {
-//            String defaultImageName = "test.jpg";
-//            mBitmap = BitmapFactory.decodeStream(getAssets().open(defaultImageName));
-//        } catch (IOException e) {
-//            Log.e("Object Detection", "Error reading assets", e);
-//            finish();
-//        }
-//        mImageView.setImageBitmap(mBitmap);
-//    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
