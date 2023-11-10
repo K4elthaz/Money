@@ -2,6 +2,7 @@ package org.pytorch.demo.objectdetection;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,144 +16,127 @@ import com.google.android.material.navigation.NavigationView;
 
 public class Capture extends AppCompatActivity {
 
+    private ConstraintLayout navMenu;
+
+    private ImageView icon1,icon2,icon3,hide,sideb,hb,bb,frnNT,bckNT;
+    private TextView txt1,txt2;
+    private Button dBtn, cBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture);
 
-        NavigationView navigationView = findViewById(R.id.navigationView);
-        ImageView sidemenubar = findViewById(R.id.sidemenubar);
-        View overlay = findViewById(R.id.overlay);
-        ImageView homeBtn = findViewById(R.id.homebtnimg);
-        ImageView backBtn = findViewById(R.id.backbtnimg);
-        Button dBtn = findViewById(R.id.detectButton);
-        Button sBtn = findViewById(R.id.selectButton);
-        ImageView frnNT = findViewById(R.id.frntbankNote);
-        TextView txt1 = findViewById(R.id.textView3);
-        ImageView bckNT = findViewById(R.id.backbankNote);
-        TextView txt2 = findViewById(R.id.textView4);
+//        MENU BTN
+        navMenu = findViewById(R.id.menu_drawer);
+        icon1 = findViewById(R.id.imageViewIcon1);
+        icon2 = findViewById(R.id.imageViewIcon2);
+        icon3 = findViewById(R.id.imageViewIcon3);
+        hide = findViewById(R.id.hidemenu);
 
-        // Set initial visibility of NavigationView to GONE
-        navigationView.setVisibility(View.GONE);
+        sideb = findViewById(R.id.sidemenubar);
+        hb = findViewById(R.id.homebtnimg);
+        bb = findViewById(R.id.backbtnimg);
 
-        // Set item click listener
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//        DETECT BTN
+        dBtn = findViewById(R.id.detectButton);
+//        Capture BTN
+        cBtn = findViewById(R.id.captureButton);
+
+
+//        IMG VIEW NUNG FRONT
+        frnNT = findViewById(R.id.frntbankNote);
+        txt1 = findViewById(R.id.textView3);
+
+//        IMG VIEW NUNG BACK
+        bckNT = findViewById(R.id.backbankNote);
+        txt2 = findViewById(R.id.textView4);
+
+
+//        HIDE THE MENU
+        navMenu.setVisibility(View.GONE);
+
+        //        MENU BAR BTN CLICKLISTINER
+        icon1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                // Handle item click here
-                switch (item.getItemId()) {
-                    case R.id.menu_item1:
-                        // Open activity for menu_item1
-                        startActivity(new Intent(Capture.this, AboutActivity.class));
-                        break;
-                    case R.id.menu_item2:
-                        // Open activity for menu_item2
-                        startActivity(new Intent(Capture.this, UserGuideActivity.class));
-                        break;
-                    case R.id.menu_item3:
-                        // Open activity for menu_item3
-                        startActivity(new Intent(Capture.this, DevelopersActivity.class));
-                        break;
-                }
-
-                return true;
+            public void onClick(View view) {
+                Intent intent = new Intent(Capture.this, AboutActivity.class);
+                startActivity(intent);
             }
         });
 
-// Set click listener for sidemenubar
-        sidemenubar.setOnClickListener(new View.OnClickListener() {
+        icon2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Toggle visibility of NavigationView
-                if (navigationView.getVisibility() == View.VISIBLE) {
-                    navigationView.setVisibility(View.GONE);
-                    overlay.setVisibility(View.GONE);
-                    // Show the buttons and sidemenubar when closing sidemenubar
-                    sidemenubar.setVisibility(View.VISIBLE);
-                } else {
-                    navigationView.setVisibility(View.VISIBLE);
-                    overlay.setVisibility(View.VISIBLE);
-                    // Hide the buttons and sidemenubar when opening sidemenubar
-                    sidemenubar.setVisibility(View.GONE);
-                }
+            public void onClick(View view) {
+                Intent intent = new Intent(Capture.this, UserGuideActivity.class);
+                startActivity(intent);
             }
         });
 
-// Set click listener for sidemenubar
-        sidemenubar.setOnClickListener(new View.OnClickListener() {
+        icon3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Toggle visibility of NavigationView
-                if (navigationView.getVisibility() == View.VISIBLE) {
-                    navigationView.setVisibility(View.GONE);
-                    overlay.setVisibility(View.GONE);
-                    // Show the buttons and sidemenubar when closing sidemenubar
-                    homeBtn.setVisibility(View.VISIBLE);
-                    backBtn.setVisibility(View.VISIBLE);
-                    dBtn.setVisibility(View.VISIBLE);
-                    sBtn.setVisibility(View.VISIBLE);
-                    frnNT.setVisibility(View.VISIBLE);
-                    txt1.setVisibility(View.VISIBLE);
-                    bckNT.setVisibility(View.VISIBLE);
-                    txt2.setVisibility(View.VISIBLE);
-                    sidemenubar.setVisibility(View.VISIBLE);
-                } else {
-                    navigationView.setVisibility(View.VISIBLE);
-                    overlay.setVisibility(View.VISIBLE);
-                    // Hide the buttons and sidemenubar when opening sidemenubar
-                    homeBtn.setVisibility(View.GONE);
-                    backBtn.setVisibility(View.GONE);
-                    dBtn.setVisibility(View.GONE);
-                    sBtn.setVisibility(View.GONE);
-                    frnNT.setVisibility(View.GONE);
-                    txt1.setVisibility(View.GONE);
-                    bckNT.setVisibility(View.GONE);
-                    txt2.setVisibility(View.GONE);
-                    sidemenubar.setVisibility(View.GONE);
-                }
+            public void onClick(View view) {
+                Intent intent = new Intent(Capture.this, DevelopersActivity.class);
+                startActivity(intent);
             }
         });
 
-// Set click listener for the overlay
-        overlay.setOnClickListener(new View.OnClickListener() {
+        hide.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Close NavigationView and hide the overlay
-                navigationView.setVisibility(View.GONE);
-                overlay.setVisibility(View.GONE);
-                // Show the buttons and sidemenubar when closing sidemenubar from overlay
-                homeBtn.setVisibility(View.VISIBLE);
-                backBtn.setVisibility(View.VISIBLE);
+            public void onClick(View view) {
+                navMenu.setVisibility(View.GONE);
+                sideb.setVisibility(View.VISIBLE);
+                hb.setVisibility(View.VISIBLE);
+                bb.setVisibility(View.VISIBLE);
+                cBtn.setVisibility(View.VISIBLE);
                 dBtn.setVisibility(View.VISIBLE);
-                sBtn.setVisibility(View.VISIBLE);
                 frnNT.setVisibility(View.VISIBLE);
-                txt1.setVisibility(View.VISIBLE);
                 bckNT.setVisibility(View.VISIBLE);
+                txt1.setVisibility(View.VISIBLE);
                 txt2.setVisibility(View.VISIBLE);
-                sidemenubar.setVisibility(View.VISIBLE);
             }
         });
 
-
-//        HOME AND BACK BTN FUNCTION
-        ImageView homeButton = findViewById(R.id.homebtnimg);
-        ImageView backButton = findViewById(R.id.backbtnimg);
-
-        homeButton.setOnClickListener(new View.OnClickListener() {
+        //        HOME AND BACK FUNCTION
+        hb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Navigate to HomeActivity
                 Intent intent = new Intent(Capture.this, HomeActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
-        backButton.setOnClickListener(new View.OnClickListener() {
+        bb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Go back to the previous activity (assuming it's HomeActivity)
                 onBackPressed();
             }
         });
+//        END NG HOME AND BACK FUNCTION
+
+
     }
+//HIDE AND VISIBLE FUNCTION NG NAV MENU
+    public void openNavMenu(View view) {
+        if (navMenu.getVisibility() == View.VISIBLE) {
+            navMenu.setVisibility(View.GONE);
+        } else {
+            navMenu.setVisibility(View.VISIBLE);
+            sideb.setVisibility(View.GONE);
+            hb.setVisibility(View.GONE);
+            bb.setVisibility(View.GONE);
+            cBtn.setVisibility(View.GONE);
+            dBtn.setVisibility(View.GONE);
+            frnNT.setVisibility(View.GONE);
+            bckNT.setVisibility(View.GONE);
+            txt1.setVisibility(View.GONE);
+            txt2.setVisibility(View.GONE);
+        }
+    }
+
+
+
 }

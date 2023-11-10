@@ -29,7 +29,8 @@
             android:src="@drawable/baseline_menu_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:onClick="openNavMenu"/>
     </LinearLayout>
 
     <LinearLayout
@@ -93,8 +94,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activitycapturelayout1" />
 
-    <!--Ni comment out ko lng muna to gawa ng mag cracrash siya since naka connect yung org.resultview na naka comment-->
-    <!--    sa ResultView.JAVA-->
+    <!--   ADD FUNCTION HIDE VISIBILITY ng frntbankNote if the resultview is not empty-->
+
+    <!--NAKA COMMENT KASI PAG KA NILAGAY NEED MAY AYUSIN SA BACKEND PARA MAG RUN-->
 
 <!--    <org.pytorch.demo.objectdetection.ResultView-->
 <!--        android:id="@+id/resultView"-->
@@ -107,7 +109,6 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/activitycapturelayout1" />-->
 
-    <!--    HIDE VISIBILITY IF the resultview is not empty-->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -120,6 +121,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/frntbankNote" />
+
+    <!--   ADD FUNCTION HIDE VISIBILITY ng textView3 if the resultview is not empty-->
 
     <TextView
         android:id="@+id/textViewDetect"
@@ -135,7 +138,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frntbankNote" />
 
-<!--    BACKEND CODE ERROR PAG NILAGAY AGAD YUNG DALAWA-->
+    <!--   ADD FUNCTION HIDE VISIBILITY ng backbankNote if the resultview is not empty-->
 
         <ImageView
             android:id="@+id/backbankNote"
@@ -151,9 +154,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frntbankNote" />
 
-        <!--    HIDE VISIBILITY IF the resultview is not empty-->
-<!--Ni comment out ko lng muna to gawa ng mag cracrash siya since naka connect yung org.resultview na naka comment-->
-<!--    sa ResultView.JAVA-->
+    <!--   ADD FUNCTION HIDE VISIBILITY ng backbankNote if the resultview is not empty-->
+
+    <!--NAKA COMMENT KASI PAG KA NILAGAY NEED MAY AYUSIN SA BACKEND PARA MAG RUN-->
 
 <!--        <org.pytorch.demo.objectdetection.ResultView-->
 <!--            android:id="@+id/resultView1"-->
@@ -179,6 +182,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/backbankNote" />
 
+    <!--   ADD FUNCTION HIDE VISIBILITY ng textView4 if the resultview is not empty-->
+
     <LinearLayout
         android:id="@+id/verticalBtnsBox"
         android:layout_width="wrap_content"
@@ -192,7 +197,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backbankNote">
 
-
+<!--BUTTON NG SCAN SA XML -->
         <Button
             android:id="@+id/detectButton"
             android:layout_width="224dp"
@@ -211,8 +216,10 @@
         <!--            android:layout_marginTop="5dp"-->
         <!--            android:background="@drawable/rounded_button_background"/>-->
 
+
+<!--        BUTTON NG CAPTURE-->
         <Button
-            android:id="@+id/selectButton"
+            android:id="@+id/captureButton"
             android:layout_width="224dp"
             android:layout_height="83dp"
             android:background="@drawable/capture1"
@@ -222,31 +229,7 @@
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="right"
-        app:constraint_referenced_ids="activitycapturelayout, activitycapturelayout1, verticalBtnsBox"/>
-
-    <View
-        android:id="@+id/overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000"
-        android:clickable="true"
-        android:visibility="gone" />
-
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@color/color_green_transparent"
-        app:headerLayout="@layout/nav_header"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/nav_menu"/>
+<!--    &lt;!&ndash;    Comment this to hide the nav_drawer &ndash;&gt;-->
+<!--    <include layout="@layout/nav_drawer" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

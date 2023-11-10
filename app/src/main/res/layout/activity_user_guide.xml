@@ -28,7 +28,8 @@
             android:src="@drawable/baseline_menu_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:onClick="openNavMenu"/>
     </LinearLayout>
 
     <LinearLayout
@@ -74,31 +75,21 @@
         app:layout_constraintTop_toBottomOf="@+id/userguidelayout1"
         app:layout_constraintVertical_bias="0.298" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
+    <!--    INFO TEXT HERE-->
+    <TextView
+        android:id="@+id/infouser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="right"
-        app:constraint_referenced_ids="userguidelayout, userguidelayout1" />
+        android:text="USER"
+        android:textAlignment="center"
+        android:textColor="@color/color_black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toTopOf="@+id/boxed" />
 
-    <View
-        android:id="@+id/overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000"
-        android:clickable="true"
-        android:visibility="gone" />
-
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:headerLayout="@layout/nav_header"
-        android:background="@color/color_green_transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/nav_menu" />
+    <!--    Comment this to hide the nav_drawer -->
+    <include layout="@layout/nav_drawer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
