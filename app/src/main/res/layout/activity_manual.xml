@@ -143,7 +143,7 @@
         android:layout_height="164dp"
         android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/captureimage1"
+
         android:contentDescription="@string/image_view"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"

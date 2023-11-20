@@ -7,7 +7,6 @@ import androidx.camera.view.PreviewView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.lifecycle.LifecycleOwner;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -25,7 +24,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -33,14 +31,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
-
 import org.pytorch.IValue;
 import org.pytorch.LiteModuleLoader;
 import org.pytorch.Module;
 import org.pytorch.Tensor;
 import org.pytorch.torchvision.TensorImageUtils;
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -127,10 +122,8 @@ public class ActivityManual extends AppCompatActivity {
         // Show image
         mImageView = findViewById(R.id.frntbankNote);
 
-        // Retrieve the captured image from the intent
         Bitmap capturedImage = getIntent().getParcelableExtra("captured_image");
 
-        // Set the captured image to the ImageView
         if (capturedImage != null) {
             mBitmap = capturedImage;
             mImageView.setImageBitmap(mBitmap);
@@ -227,10 +220,9 @@ public class ActivityManual extends AppCompatActivity {
             }
         });
 
-        // Try to load our trained YOLOv5 model
         try {
-            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "best.torchscript.ptl"));
-            BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("skin.txt")));
+            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "money.torchscript.ptl"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();
             while ((line = br.readLine()) != null) {
@@ -243,33 +235,22 @@ public class ActivityManual extends AppCompatActivity {
             finish();
         }
 
-        //        MENU BTN
         navMenu = findViewById(R.id.menu_drawer);
         icon1 = findViewById(R.id.imageViewIcon1);
         icon2 = findViewById(R.id.imageViewIcon2);
         icon3 = findViewById(R.id.imageViewIcon3);
         hide = findViewById(R.id.hidemenu);
-
         sideb = findViewById(R.id.sidemenubar);
         hb = findViewById(R.id.homebtnimg);
         bb = findViewById(R.id.backbtnimg);
-
-//        DETECT BTN
         dBtn = findViewById(R.id.detectButton);
-//        Capture BTN
         sBtn = findViewById(R.id.selectButton);
-
-
-//        IMG VIEW NUNG FRONT
         frnNT = findViewById(R.id.frntbankNote);
         txt1 = findViewById(R.id.textView3);
-
-//        IMG VIEW NUNG BACK
         bckNT = findViewById(R.id.backbankNote);
         txt2 = findViewById(R.id.textView4);
 
 
-//        HIDE THE MENU
         navMenu.setVisibility(View.GONE);
 
         //        MENU BAR BTN CLICKLISTINER
@@ -313,7 +294,6 @@ public class ActivityManual extends AppCompatActivity {
             }
         });
 
-//        HOME AND BACK BTN FUNCTION
         hb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -330,12 +310,8 @@ public class ActivityManual extends AppCompatActivity {
                 onBackPressed();
             }
         });
-//        END OF HOME AND BACK BTN FUNCTION
-
-
     }
 
-//    PARA MAG HIDE AND VISIBLE YUNG NAV
     public void openNavMenu(View view) {
         if (navMenu.getVisibility() == View.VISIBLE) {
             navMenu.setVisibility(View.GONE);
@@ -352,8 +328,6 @@ public class ActivityManual extends AppCompatActivity {
             txt2.setVisibility(View.GONE);
         }
     }
-
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

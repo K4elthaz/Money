@@ -134,7 +134,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="143dp"
-        android:text="Detecting"
         android:textAlignment="center"
         android:textColor="@color/color_black"
         android:textSize="17sp"

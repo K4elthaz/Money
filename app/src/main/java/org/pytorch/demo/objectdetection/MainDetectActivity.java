@@ -98,7 +98,7 @@ public class MainDetectActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_manual);
         getSupportActionBar().hide();
 
         // Check permission for loading images from the gallery
@@ -111,7 +111,7 @@ public class MainDetectActivity extends AppCompatActivity {
         }
 
         // Set layout
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_manual);
         textViewDetection = findViewById(R.id.textViewDetect);
 
         // Show image
@@ -141,60 +141,6 @@ public class MainDetectActivity extends AppCompatActivity {
         mResultView.setVisibility(View.INVISIBLE);
         mResultView.getLayoutParams().height = mImageView.getHeight();
 
-        // Hide previewView
-//        previewView = findViewById(R.id.prevView);
-//        previewView.getLayoutParams().height = mImageView.getHeight();
-//        previewView.setVisibility(View.INVISIBLE);
-//
-//        // Test default images
-//        try {
-//            AssetManager assetManager = getAssets();
-//            mTestImages = assetManager.list("examples");
-//        } catch (IOException e) {
-//            Log.e("", "Problems with examples images.");
-//        }
-//        buttonTest = findViewById(R.id.testButton);
-//        buttonTest.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if (mTestImages == null) return;
-//                mResultView.setVisibility(View.INVISIBLE);
-//                mImageIndex = (mImageIndex + 1) % mTestImages.length;
-//                String imageName = mTestImages[mImageIndex];
-//                Log.i("EXAMPLE LOADED", imageName);
-//                try {
-//                    textViewDetection.setText("");
-//                    mBitmap = BitmapFactory.decodeStream(getAssets().open(imagesPath + imageName));
-//                    mImageView.setImageBitmap(mBitmap);
-//                } catch (IOException e) {
-//                    Log.e("Object Detection", "Error reading assets", e);
-//                    finish();
-//                }
-//            }
-//        });
-
-//        // Load image from the gallery
-//        final Button buttonSelect = findViewById(R.id.selectButton);
-//        buttonSelect.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                mResultView.setVisibility(View.INVISIBLE);
-//                // Building popup
-//                final CharSequence[] options = {"Open Gallery", "Back"};
-//                AlertDialog.Builder builder = new AlertDialog.Builder(MainDetectActivity.this);
-//                builder.setTitle("New Test Image");
-//                builder.setItems(options, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int item) {
-//                        if (item == 0) { // open gallery
-//                            Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//                            startActivityForResult(pickPhoto, 1);
-//                        } else if (item == 1) {  // back
-//                            dialog.dismiss();
-//                        }
-//                    }
-//                });
-//                builder.show();
-//            }
-//        });
 
         // Detect image loaded in the mImageView
         mButtonDetect = findViewById(R.id.detectButton);
@@ -249,8 +195,8 @@ public class MainDetectActivity extends AppCompatActivity {
 
         // Try to load our trained YOLOv5 model
         try {
-            mModule = LiteModuleLoader.load(MainDetectActivity.assetFilePath(getApplicationContext(), "best.torchscript.ptl"));
-            BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("skin.txt")));
+            mModule = LiteModuleLoader.load(MainDetectActivity.assetFilePath(getApplicationContext(), "money.torchscript.ptl"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();
             while ((line = br.readLine()) != null) {
@@ -265,34 +211,8 @@ public class MainDetectActivity extends AppCompatActivity {
 
         LifecycleOwner lifecycleOwner = this;
         cameraController = new CameraController(this);
-        // Open camera and detect
-//        final Button buttonLive = findViewById(R.id.liveButton);
-//        buttonLive.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if (!cameraController.is_camera_open) {
-//                    cameraController.startCamera(previewView, mImageView, mResultView, lifecycleOwner);
-//                    buttonLive.setText("Close Camera");
-//                } else {
-//                    cameraController.closeCamera();
-//                    loadDefaultImage();
-//                    buttonLive.setText(getString(R.string.live));
-//                    textViewDetection.setText("");
-//                }
-//            }
-//        });
-    }
 
-//    private void loadDefaultImage() {
-//        // Load the default image
-//        try {
-//            String defaultImageName = "test.jpg";
-//            mBitmap = BitmapFactory.decodeStream(getAssets().open(defaultImageName));
-//        } catch (IOException e) {
-//            Log.e("Object Detection", "Error reading assets", e);
-//            finish();
-//        }
-//        mImageView.setImageBitmap(mBitmap);
-//    }
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

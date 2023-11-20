@@ -1,0 +1,13 @@
+fake fifty
+fake five hundred
+fake one hundred
+fake one thousand
+fake twenty
+fake two hundred
+not money
+real fifty
+real five hundred
+real one hundred
+real one thousand
+real twenty
+real two hundred

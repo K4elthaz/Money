@@ -96,14 +96,14 @@ public class HomeActivity extends AppCompatActivity {
 //        CONNECTED SA RESULTVIEW.JAVA
 
 
-        ImageView captureButton = findViewById(R.id.captureImgBtn);
-        captureButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, Capture.class);
-                startActivity(i);
-            }
-        });
+//        ImageView captureButton = findViewById(R.id.captureImgBtn);
+//        captureButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(HomeActivity.this, Capture.class);
+//                startActivity(i);
+//            }
+//        });
 
 //        UPLOAD BTN
         ImageView uploadBtn = findViewById(R.id.uploadImgBtn);
@@ -117,18 +117,18 @@ public class HomeActivity extends AppCompatActivity {
 //         Diko alam kung ano to pero pagka meron kasi nito naka comment di ko marun yung activity manual pag pinindot yung upload btn
 
 
-//        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
-//        ImageView cameraButton = findViewById(R.id.uploadImgBtn);
-//        cameraButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//
-//                if (cameraIntent.resolveActivity(getPackageManager()) != null) {
-//                    startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
-//                }
-//            }
-//        });
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        ImageView cameraButton = findViewById(R.id.captureImgBtn);
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                if (cameraIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
+                }
+            }
+        });
     }
 
 // NAV VISIBLE AND GONE
@@ -153,7 +153,7 @@ public class HomeActivity extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
             Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
             if (imageBitmap != null) {
-                Intent intent = new Intent(HomeActivity.this, MainDetectActivity.class);
+                Intent intent = new Intent(HomeActivity.this, Capture.class);
                 intent.putExtra("captured_image", imageBitmap);
                 startActivity(intent);
             }

@@ -29,30 +29,19 @@ public class ScanResultActivity extends AppCompatActivity {
         hide = findViewById(R.id.hidemenu);
         sideb = findViewById(R.id.sidemenubar);
         box = findViewById(R.id.boxed);
-
         hb = findViewById(R.id.homebtnimg);
         bb = findViewById(R.id.backbtnimg);
-
         txt1 = findViewById(R.id.textview14);
         txt2 = findViewById(R.id.textview15);
         txt3 = findViewById(R.id.textview16);
         txt4 = findViewById(R.id.textview12);
-
-//BTN PARA MA PUMUNTA DUN SA CONVERT CURRENCY APP dapat makuha din yung Value ng pera para auto insert dun kung i hahard coded
         convertCurrencyBtn = findViewById(R.id.finalConBtn);
-
-//        ETO YUNG KUNG SAAN MA LALAGAY YUNG MGA NAKA DETECT OR RESULT
         classresult = findViewById(R.id.classificationResult);
         currecnyresult = findViewById(R.id.currencyResult);
         valueresult = findViewById(R.id.valueResult);
-
-// Eto namn yung IMGview nung ma rereplace yung right and wrong icon
         rightwrong = findViewById(R.id.rightorwrongicon);
-
         navMenu.setVisibility(View.GONE);
 
-
-        //        MENU BAR BTN CLICKLISTINER
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,8 +86,6 @@ public class ScanResultActivity extends AppCompatActivity {
             }
         });
 
-
-//        HOME AND BACK BUTTON FUNCTION
         hb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,13 +103,8 @@ public class ScanResultActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-//        END NG HOME AND BACK BTN FUNCTION
-
-
-
     }
 
-//PARA MA OPEN AND CLOSE YUNG NAV
     public void openNavMenu(View view) {
         if (navMenu.getVisibility() == View.VISIBLE) {
             navMenu.setVisibility(View.GONE);
@@ -143,7 +125,4 @@ public class ScanResultActivity extends AppCompatActivity {
             rightwrong.setVisibility(View.GONE);
         }
     }
-
-
-
 }

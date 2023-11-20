@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Capture"
+    tools:context="org.pytorch.demo.objectdetection.MainActivity"
     android:background="@drawable/bg2">
 
 
@@ -230,6 +230,6 @@
     </LinearLayout>
 
 <!--    &lt;!&ndash;    Comment this to hide the nav_drawer &ndash;&gt;-->
-<!--    <include layout="@layout/nav_drawer" />-->
+    <include layout="@layout/nav_drawer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
