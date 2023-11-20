@@ -13,7 +13,7 @@ public class ScanResultActivity extends AppCompatActivity {
 
     private ConstraintLayout navMenu;
 
-    private ImageView icon1,icon2,icon3,hide,sideb,hb,bb, rightwrong, box, convertCurrencyBtn;
+    private ImageView icon1, icon2, icon3, hide, sideb, hb, bb, rightwrong, box, convertCurrencyBtn;
 
     private TextView txt1, txt2, txt3, txt4, classresult, currecnyresult, valueresult;
 
@@ -103,6 +103,30 @@ public class ScanResultActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        convertCurrencyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Get the value from valueresult TextView
+                String value = valueresult.getText().toString();
+
+                // Create an intent to start ConvertCurrencyActivity
+                Intent intent = new Intent(ScanResultActivity.this, ConvertCurrencyActivity.class);
+
+                // Put the value as an extra in the intent
+                intent.putExtra("valueResult", value);
+
+                // Start the ConvertCurrencyActivity
+                startActivity(intent);
+            }
+        });
+
+
+        // Receive content from ActivityManual and update the TextView
+        String textViewContent = getIntent().getStringExtra("textViewContent");
+        if (textViewContent != null) {
+            updateTextViewContent(textViewContent);
+        }
     }
 
     public void openNavMenu(View view) {
@@ -123,6 +147,39 @@ public class ScanResultActivity extends AppCompatActivity {
             txt4.setVisibility(View.GONE);
             box.setVisibility(View.GONE);
             rightwrong.setVisibility(View.GONE);
+        }
+    }
+
+    // Update the content of the classificationResult TextView
+    private void updateTextViewContent(String content) {
+        classresult.setText(content);
+
+        // Remove the percentage and trim any leading/trailing whitespace
+        String cleanedContent = content.replaceAll("[^a-zA-Z ]", "").trim();
+
+        // Add your validation logic here
+        if (cleanedContent.equalsIgnoreCase("real fifty")) {
+            currecnyresult.setText("Pesos");
+            valueresult.setText("50");
+        } else if (cleanedContent.equalsIgnoreCase("real five hundred")) {
+            currecnyresult.setText("Pesos");
+            valueresult.setText("500");
+        } else if (cleanedContent.equalsIgnoreCase("real one hundred")) {
+            currecnyresult.setText("Pesos");
+            valueresult.setText("100");
+        } else if (cleanedContent.equalsIgnoreCase("real one thousand")) {
+            currecnyresult.setText("Pesos");
+            valueresult.setText("1000");
+        } else if (cleanedContent.equalsIgnoreCase("real twenty")) {
+            currecnyresult.setText("Pesos");
+            valueresult.setText("20");
+        } else if (cleanedContent.equalsIgnoreCase("real two hundred")) {
+            currecnyresult.setText("Pesos");
+            valueresult.setText("200");
+        } else {
+            // Handle other cases or provide a default value
+            currecnyresult.setText("Unknown Currency");
+            valueresult.setText("N/A");
         }
     }
 }

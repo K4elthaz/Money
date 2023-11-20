@@ -127,6 +127,12 @@ public class ConvertCurrencyActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        // Retrieve the value passed from ScanResultActivity
+        String valueResult = getIntent().getStringExtra("valueResult");
+
+        // Set the received value in the amountEditText
+        amountEditText.setText(valueResult);
     }
 
     public void openNavMenu(View view) {
@@ -141,6 +147,7 @@ public class ConvertCurrencyActivity extends AppCompatActivity {
             convertButton.setVisibility(View.GONE);
         }
     }
+
     private void convertCurrency() {
         String fromCurrency = fromCurrencySpinner.getSelectedItem().toString();
         String toCurrency = toCurrencySpinner.getSelectedItem().toString();

@@ -20,7 +20,7 @@ public class AboutActivity extends AppCompatActivity {
 
     private ImageView icon1,icon2,icon3,hide,sideb,hb,bb,box;
 
-    private TextView inf;
+    private TextView inf,capture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class AboutActivity extends AppCompatActivity {
         box = findViewById(R.id.boxed);
         inf = findViewById(R.id.infoabt);
         navMenu.setVisibility(View.GONE);
+        capture = findViewById(R.id.capture);
 
 //        MENU BAR BTN CLICKLISTINER
         icon1.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +74,7 @@ public class AboutActivity extends AppCompatActivity {
                 bb.setVisibility(View.VISIBLE);
                 box.setVisibility(View.VISIBLE);
                 inf.setVisibility(View.VISIBLE);
+                capture.setVisibility(View.VISIBLE);
             }
         });
 
@@ -107,6 +109,7 @@ public class AboutActivity extends AppCompatActivity {
             bb.setVisibility(View.GONE);
             box.setVisibility(View.GONE);
             inf.setVisibility(View.GONE);
+            capture.setVisibility(View.GONE);
         }
     }
 }

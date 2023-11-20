@@ -214,6 +214,9 @@ public class Capture extends AppCompatActivity {
                                 mResultView.setResults(results);
                                 mResultView.invalidate();
                                 mResultView.setVisibility(View.VISIBLE);
+
+                                String textViewContent = generateTextViewContent(results);
+                                sendTextViewContentToScanResultActivity(textViewContent);
                             }
                         });
                     }
@@ -326,8 +329,27 @@ public class Capture extends AppCompatActivity {
             }
         });
 //        END OF HOME AND BACK BTN FUNCTION
+    }
 
+    private String generateTextViewContent(ArrayList<Result> results) {
+        StringBuilder textViewContent = new StringBuilder();
+        for (Result result : results) {
+            String labelDetected = PrePostProcessor.mClasses[result.classIndex];
+            labelDetected = labelDetected.replace("_", " ");
+            labelDetected = labelDetected.toUpperCase();
+            textViewContent.append(labelDetected)
+                    .append("  ")
+                    .append(String.valueOf(Math.round(result.score * 10000) / 100))
+                    .append("%\n");
+        }
+        return textViewContent.toString();
+    }
 
+    // Send the textViewContent to ScanResultActivity
+    private void sendTextViewContentToScanResultActivity(String textViewContent) {
+        Intent intent = new Intent(this, ScanResultActivity.class);
+        intent.putExtra("textViewContent", textViewContent);
+        startActivity(intent);
     }
 
     //    PARA MAG HIDE AND VISIBLE YUNG NAV

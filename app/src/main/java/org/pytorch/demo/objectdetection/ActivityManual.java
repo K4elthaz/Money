@@ -58,7 +58,7 @@ public class ActivityManual extends AppCompatActivity {
     private ImageView mImageView, icon1, icon2, icon3, hide, sideb, hb, bb, frnNT, bckNT;
     private ResultView mResultView;
     private Button mButtonDetect, dBtn, sBtn;
-    private TextView textViewDetection, txt1,txt2;
+    private TextView textViewDetection, txt1, txt2;
     private ProgressBar mProgressBar;
     private Bitmap mBitmap = null;
     private Module mModule = null;  // our model
@@ -116,7 +116,6 @@ public class ActivityManual extends AppCompatActivity {
         }
 
         // Set layout
-        setContentView(R.layout.activity_manual);
         textViewDetection = findViewById(R.id.textViewDetect);
 
         // Show image
@@ -192,7 +191,9 @@ public class ActivityManual extends AppCompatActivity {
                     @Override
                     public void run() {
                         // Get scaled bitmap
-                        Bitmap resizedBitmap = Bitmap.createScaledBitmap(mBitmap, PrePostProcessor.mInputWidth, PrePostProcessor.mInputHeight, true);
+                        Bitmap resizedBitmap = Bitmap.createScaledBitmap(mBitmap, PrePostProcessor.mInputWidth
+
+                                , PrePostProcessor.mInputHeight, true);
                         // Create tensor
                         final Tensor inputTensor = TensorImageUtils.bitmapToFloat32Tensor(resizedBitmap, PrePostProcessor.NO_MEAN_RGB, PrePostProcessor.NO_STD_RGB);
                         // Forward tensor for inference
@@ -212,6 +213,10 @@ public class ActivityManual extends AppCompatActivity {
                                 mResultView.setResults(results);
                                 mResultView.invalidate();
                                 mResultView.setVisibility(View.VISIBLE);
+
+                                // Create and send an Intent to ScanResultActivity
+                                String textViewContent = generateTextViewContent(results);
+                                sendTextViewContentToScanResultActivity(textViewContent);
                             }
                         });
                     }
@@ -249,7 +254,6 @@ public class ActivityManual extends AppCompatActivity {
         txt1 = findViewById(R.id.textView3);
         bckNT = findViewById(R.id.backbankNote);
         txt2 = findViewById(R.id.textView4);
-
 
         navMenu.setVisibility(View.GONE);
 
@@ -312,21 +316,26 @@ public class ActivityManual extends AppCompatActivity {
         });
     }
 
-    public void openNavMenu(View view) {
-        if (navMenu.getVisibility() == View.VISIBLE) {
-            navMenu.setVisibility(View.GONE);
-        } else {
-            navMenu.setVisibility(View.VISIBLE);
-            sideb.setVisibility(View.GONE);
-            hb.setVisibility(View.GONE);
-            bb.setVisibility(View.GONE);
-            sBtn.setVisibility(View.GONE);
-            dBtn.setVisibility(View.GONE);
-            frnNT.setVisibility(View.GONE);
-            bckNT.setVisibility(View.GONE);
-            txt1.setVisibility(View.GONE);
-            txt2.setVisibility(View.GONE);
+    // Generate the content for the TextView in ScanResultActivity
+    private String generateTextViewContent(ArrayList<Result> results) {
+        StringBuilder textViewContent = new StringBuilder();
+        for (Result result : results) {
+            String labelDetected = PrePostProcessor.mClasses[result.classIndex];
+            labelDetected = labelDetected.replace("_", " ");
+            labelDetected = labelDetected.toUpperCase();
+            textViewContent.append(labelDetected)
+                    .append("  ")
+                    .append(String.valueOf(Math.round(result.score * 10000) / 100))
+                    .append("%\n");
         }
+        return textViewContent.toString();
+    }
+
+    // Send the textViewContent to ScanResultActivity
+    private void sendTextViewContentToScanResultActivity(String textViewContent) {
+        Intent intent = new Intent(this, ScanResultActivity.class);
+        intent.putExtra("textViewContent", textViewContent);
+        startActivity(intent);
     }
 
     @Override
@@ -382,6 +391,8 @@ public class ActivityManual extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        // Register the BroadcastReceiver to listen for "trigger_detect"
 
         // Register the BroadcastReceiver to listen for "trigger_detect" action
         IntentFilter intentFilter = new IntentFilter("trigger_detect");

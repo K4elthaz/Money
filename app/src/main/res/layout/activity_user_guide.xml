@@ -66,8 +66,8 @@
 
     <ImageView
         android:id="@+id/boxed"
-        android:layout_width="365dp"
-        android:layout_height="341dp"
+        android:layout_width="367dp"
+        android:layout_height="381dp"
         android:background="@drawable/rounded_green_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,18 +76,104 @@
         app:layout_constraintVertical_bias="0.298" />
 
     <!--    INFO TEXT HERE-->
+
     <TextView
         android:id="@+id/infouser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="USER"
+        android:text="USER GUIDE"
         android:textAlignment="center"
         android:textColor="@color/color_black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.058" />
+
+    <TextView
+        android:id="@+id/capture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capture Image"
+        android:textColor="@color/color_black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
         app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="@+id/boxed"
-        app:layout_constraintTop_toTopOf="@+id/boxed" />
+        app:layout_constraintTop_toTopOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <TextView
+        android:id="@+id/capture1"
+        android:layout_width="334dp"
+        android:layout_height="66dp"
+        android:text="@string/guide_desc"
+        android:textColor="@color/color_black"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toTopOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.269" />
+
+
+    <TextView
+        android:id="@+id/capture3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convert Currency"
+        android:textColor="@color/color_black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toTopOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.447" />
+
+    <TextView
+        android:id="@+id/capture4"
+        android:layout_width="334dp"
+        android:layout_height="66dp"
+        android:text="@string/guide_desc1"
+        android:textColor="@color/color_black"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toTopOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.606" />
+
+    <TextView
+        android:id="@+id/capture5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Image"
+        android:textColor="@color/color_black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toTopOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.734" />
+
+    <TextView
+        android:id="@+id/capture6"
+        android:layout_width="334dp"
+        android:layout_height="66dp"
+        android:text="@string/guide_desc2"
+        android:textColor="@color/color_black"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toTopOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.933" />
+
 
     <!--    Comment this to hide the nav_drawer -->
     <include layout="@layout/nav_drawer" />

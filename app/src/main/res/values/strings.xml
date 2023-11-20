@@ -54,6 +54,22 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="guide_desc">Click the "CAPTURE" button and take a photo of the paper bill.
+    Make sure the image is clear and suits the gridlines of the camera.
+    </string>
+    <string name="guide_desc1">Open your internet connection.
+    Select your desired country and enter the amount.
+    </string>
+    <string name="guide_desc2">Select or import your desired image from your gallery.
+    </string>
+    <string name="about_us">M-Dect: A Mobile Based Application for Detecting Counterfeit Foreign Exchange (forex)
+    Currencies Through Image Processing, which makes it simpler and more accessible for people
+    and businesses to verify the legitimacy of their currency transactions, it has the potential to
+    transform the way that foreign exchange currencies are now validated. Another feature of this
+    would be the currency converter.
+    This application is only limited for US dollar ($), South Korean won (₩), India rupiah
+    (Rp), New Taiwan dollar (NT$), Yen (JP¥) and Philippine peso (₱). Other currencies may not
+    work in this application</string>
 
     <string name="menu_transform">Transform</string>
     <string name="menu_reflow">Reflow</string>
