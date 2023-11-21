@@ -85,7 +85,7 @@ public class HomeActivity extends AppCompatActivity {
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(HomeActivity.this, ConvertCurrencyActivity.class);
+                Intent i = new Intent(HomeActivity.this, convert_real.class);
                 startActivity(i);
             }
         });

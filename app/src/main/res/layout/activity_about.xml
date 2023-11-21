@@ -64,19 +64,18 @@
 
     </LinearLayout>
 
+    <!--    INFO TEXT HERE-->
     <ImageView
         android:id="@+id/boxed"
-        android:layout_width="365dp"
-        android:layout_height="234dp"
+        android:layout_width="328dp"
+        android:layout_height="347dp"
         android:background="@drawable/rounded_green_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aboutlayout1"
-        app:layout_constraintVertical_bias="0.373" />
+        app:layout_constraintVertical_bias="0.394" />
 
-    <!--    INFO TEXT HERE-->
     <TextView
         android:id="@+id/infoabt"
         android:layout_width="wrap_content"
@@ -94,12 +93,12 @@
 
     <TextView
         android:id="@+id/capture"
-        android:layout_width="338dp"
-        android:layout_height="164dp"
+        android:layout_width="308dp"
+        android:layout_height="251dp"
         android:text="@string/about_us"
         android:textAlignment="center"
         android:textColor="@color/color_black"
-        android:textStyle="bold"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/boxed"
         app:layout_constraintEnd_toEndOf="@+id/boxed"
         app:layout_constraintHorizontal_bias="0.518"

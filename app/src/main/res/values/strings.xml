@@ -86,6 +86,23 @@
     <string name="image_view_item_transform_content_description">Represents an image view in the
         item
     </string>
+    <string-array name="currency_options">
+        <item>USD</item>
+        <item>INR</item>
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>PHP</item>
+        <item>IDR</item>
+        <item>JPY</item>
+        <item>TWD</item>
+        <item>KRW</item>
+    </string-array>
 
+    <string name="fromHint">Enter Amount</string>
+    <string name="toHint">Press Convert</string>
+    <string name="convertText">Convert</string>
+    <string name="toCTA">↓</string>
 
 </resources>

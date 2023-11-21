@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,7 +19,7 @@ public class ScanResultActivity extends AppCompatActivity {
 
     private ImageView icon1, icon2, icon3, hide, sideb, hb, bb, rightwrong, box, convertCurrencyBtn;
 
-    private TextView txt1, txt2, txt3, txt4, classresult, currecnyresult, valueresult;
+    private TextView txt1, txt2, txt3, txt4, classresult, currecnyresult, valueresult, link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,19 @@ public class ScanResultActivity extends AppCompatActivity {
         valueresult = findViewById(R.id.valueResult);
         rightwrong = findViewById(R.id.rightorwrongicon);
         navMenu.setVisibility(View.GONE);
+        TextView linkTextView = findViewById(R.id.link);
+
+        linkTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://example.com";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+
+        linkTextView.setPaintFlags(linkTextView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,7 +128,7 @@ public class ScanResultActivity extends AppCompatActivity {
                 String value = valueresult.getText().toString();
 
                 // Create an intent to start ConvertCurrencyActivity
-                Intent intent = new Intent(ScanResultActivity.this, ConvertCurrencyActivity.class);
+                Intent intent = new Intent(ScanResultActivity.this, convert_real.class);
 
                 // Put the value as an extra in the intent
                 intent.putExtra("valueResult", value);
@@ -120,7 +137,6 @@ public class ScanResultActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         // Receive content from ActivityManual and update the TextView
         String textViewContent = getIntent().getStringExtra("textViewContent");
@@ -153,11 +169,8 @@ public class ScanResultActivity extends AppCompatActivity {
     // Update the content of the classificationResult TextView
     private void updateTextViewContent(String content) {
         classresult.setText(content);
-
-        // Remove the percentage and trim any leading/trailing whitespace
         String cleanedContent = content.replaceAll("[^a-zA-Z ]", "").trim();
 
-        // Add your validation logic here
         if (cleanedContent.equalsIgnoreCase("real fifty")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("50");
@@ -176,10 +189,66 @@ public class ScanResultActivity extends AppCompatActivity {
         } else if (cleanedContent.equalsIgnoreCase("real two hundred")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("200");
+        } else if (cleanedContent.equalsIgnoreCase("fake fifty")) {
+            currecnyresult.setText("Counterfeit");
+            valueresult.setText("Counterfeit");
+            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+            wrongIcon.setImageResource(R.drawable.wrong1);
+            TextView linkTextView = findViewById(R.id.link);
+            linkTextView.setText("Why it is a Counterfeit?");
+            linkTextView.setTextColor(Color.BLUE);
+            linkTextView.setClickable(true);
+        } else if (cleanedContent.equalsIgnoreCase("fake twenty")) {
+            currecnyresult.setText("Counterfeit");
+            valueresult.setText("Counterfeit");
+            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+            wrongIcon.setImageResource(R.drawable.wrong1);
+            TextView linkTextView = findViewById(R.id.link);
+            linkTextView.setText("Why it is a Counterfeit?");
+            linkTextView.setTextColor(Color.BLUE);
+            linkTextView.setClickable(true);
+        } else if (cleanedContent.equalsIgnoreCase("fake one hundred")) {
+            currecnyresult.setText("Counterfeit");
+            valueresult.setText("Counterfeit");
+            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+            wrongIcon.setImageResource(R.drawable.wrong1);
+            TextView linkTextView = findViewById(R.id.link);
+            linkTextView.setText("Why it is a Counterfeit?");
+            linkTextView.setTextColor(Color.BLUE);
+            linkTextView.setClickable(true);
+        } else if (cleanedContent.equalsIgnoreCase("fake five hundred")) {
+            currecnyresult.setText("Counterfeit");
+            valueresult.setText("Counterfeit");
+            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+            wrongIcon.setImageResource(R.drawable.wrong1);
+            TextView linkTextView = findViewById(R.id.link);
+            linkTextView.setText("Why it is a Counterfeit?");
+            linkTextView.setTextColor(Color.BLUE);
+            linkTextView.setClickable(true);
+        } else if (cleanedContent.equalsIgnoreCase("fake two hundred")) {
+            currecnyresult.setText("Counterfeit");
+            valueresult.setText("Counterfeit");
+            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+            wrongIcon.setImageResource(R.drawable.wrong1);
+            TextView linkTextView = findViewById(R.id.link);
+            linkTextView.setText("Why it is a Counterfeit?");
+            linkTextView.setTextColor(Color.BLUE);
+            linkTextView.setClickable(true);
+        } else if (cleanedContent.equalsIgnoreCase("fake one thousand")) {
+            currecnyresult.setText("Counterfeit");
+            valueresult.setText("Counterfeit");
+            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+            wrongIcon.setImageResource(R.drawable.wrong1);
+            TextView linkTextView = findViewById(R.id.link);
+            linkTextView.setText("Why it is a Counterfeit?");
+            linkTextView.setTextColor(Color.BLUE);
+            linkTextView.setClickable(true);
         } else {
             // Handle other cases or provide a default value
             currecnyresult.setText("Unknown Currency");
             valueresult.setText("N/A");
+            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+            wrongIcon.setImageResource(R.drawable.wrong1);
         }
     }
 }

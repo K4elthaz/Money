@@ -112,6 +112,7 @@
     <!--    CURRENCY TEXT RESULT-->
 
     <LinearLayout
+        android:id="@+id/parentLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -217,6 +218,20 @@
         app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toEndOf="@+id/textview16"
         app:layout_constraintTop_toBottomOf="@+id/currencyResult"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/link"
+        android:layout_width="164dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toBottomOf="@+id/textview16"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
