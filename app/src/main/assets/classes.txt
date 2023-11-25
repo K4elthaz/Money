@@ -4,10 +4,32 @@ fake one hundred
 fake one thousand
 fake twenty
 fake two hundred
-not money
 real fifty
+real fifty rupees
+real fifty us dollars
+real fiftyrupees
+real fiftythousand won
 real five hundred
+real five hundred taiwan dollar
+real five hundredrupees
+real five thousand won
+real five us dollars
+real fivethousand yen
 real one hundred
+real one hundred dollars
+real one hundred taiwan dollar
 real one thousand
+real one thousand taiwan dollar
+real one thousand won
+real one thousand yen
+real one us dollar
+real ten rupees
+real ten thousand won
+real ten us dollars
+real tenthousand yen
 real twenty
+real twenty us dollars
+real twentyrupees
 real two hundred
+real two us dollars
+realone hundredrupees

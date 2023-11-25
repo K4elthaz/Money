@@ -189,6 +189,72 @@ public class ScanResultActivity extends AppCompatActivity {
         } else if (cleanedContent.equalsIgnoreCase("real two hundred")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("200");
+        } else if (cleanedContent.equalsIgnoreCase("real fifty rupees")) {
+            currecnyresult.setText("Rupees");
+            valueresult.setText("50");
+        } else if (cleanedContent.equalsIgnoreCase("real fifty us dollars")) {
+            currecnyresult.setText("Dollar");
+            valueresult.setText("50");
+        } else if (cleanedContent.equalsIgnoreCase("real fiftythousand won")) {
+            currecnyresult.setText("Won");
+            valueresult.setText("50,000");
+        } else if (cleanedContent.equalsIgnoreCase("real five hundred taiwan dollar")) {
+            currecnyresult.setText("Taiwan Dollar");
+            valueresult.setText("500");
+        } else if (cleanedContent.equalsIgnoreCase("real five hundredrupees")) {
+            currecnyresult.setText("Rupees");
+            valueresult.setText("500");
+        } else if (cleanedContent.equalsIgnoreCase("real five thousand won")) {
+            currecnyresult.setText("Won");
+            valueresult.setText("5000");
+        } else if (cleanedContent.equalsIgnoreCase("real five us dollars")) {
+            currecnyresult.setText("Dollar");
+            valueresult.setText("5");
+        } else if (cleanedContent.equalsIgnoreCase("real fivethousand yen")) {
+            currecnyresult.setText("Yen");
+            valueresult.setText("5000");
+        } else if (cleanedContent.equalsIgnoreCase("real one hundred dollars")) {
+            currecnyresult.setText("Dollar");
+            valueresult.setText("100");
+        } else if (cleanedContent.equalsIgnoreCase("real one hundred taiwan dollar")) {
+            currecnyresult.setText("Taiwan Dollar");
+            valueresult.setText("100");
+        } else if (cleanedContent.equalsIgnoreCase("real one thousand taiwan dollar")) {
+            currecnyresult.setText("Taiwan Dollar");
+            valueresult.setText("1000");
+        } else if (cleanedContent.equalsIgnoreCase("real one thousand won")) {
+            currecnyresult.setText("Won");
+            valueresult.setText("1000");
+        } else if (cleanedContent.equalsIgnoreCase("real one thousand yen")) {
+            currecnyresult.setText("Yen");
+            valueresult.setText("1000");
+        } else if (cleanedContent.equalsIgnoreCase("real one us dollar")) {
+            currecnyresult.setText("Dollar");
+            valueresult.setText("1");
+        } else if (cleanedContent.equalsIgnoreCase("real ten rupees")) {
+            currecnyresult.setText("Rupees");
+            valueresult.setText("10");
+        } else if (cleanedContent.equalsIgnoreCase("real ten thousand won")) {
+            currecnyresult.setText("Won");
+            valueresult.setText("10000");
+        } else if (cleanedContent.equalsIgnoreCase("real ten us dollars")) {
+            currecnyresult.setText("Dollar");
+            valueresult.setText("10");
+        } else if (cleanedContent.equalsIgnoreCase("real tenthousand yen")) {
+            currecnyresult.setText("Yen");
+            valueresult.setText("10000");
+        } else if (cleanedContent.equalsIgnoreCase("real twenty us dollars")) {
+            currecnyresult.setText("Dollar");
+            valueresult.setText("20");
+        } else if (cleanedContent.equalsIgnoreCase("real twentyrupees")) {
+            currecnyresult.setText("Rupees");
+            valueresult.setText("20");
+        } else if (cleanedContent.equalsIgnoreCase("real two us dollars")) {
+            currecnyresult.setText("Dollar");
+            valueresult.setText("2");
+        } else if (cleanedContent.equalsIgnoreCase("realone hundredrupees")) {
+            currecnyresult.setText("Rupees");
+            valueresult.setText("100");
         } else if (cleanedContent.equalsIgnoreCase("fake fifty")) {
             currecnyresult.setText("Counterfeit");
             valueresult.setText("Counterfeit");

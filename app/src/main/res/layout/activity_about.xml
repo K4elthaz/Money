@@ -93,20 +93,20 @@
 
     <TextView
         android:id="@+id/capture"
-        android:layout_width="308dp"
-        android:layout_height="251dp"
+        android:layout_width="298dp"
+        android:layout_height="279dp"
         android:text="@string/about_us"
         android:textAlignment="center"
         android:textColor="@color/color_black"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/boxed"
         app:layout_constraintEnd_toEndOf="@+id/boxed"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="@+id/boxed"
         app:layout_constraintTop_toTopOf="@+id/boxed"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.867" />
 
-<!--        Comment this to hide the nav_drawer -->
-    <include layout="@layout/nav_drawer" />
+    <!--        Comment this to hide the nav_drawer -->
+<!--    <include layout="@layout/nav_drawer" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
