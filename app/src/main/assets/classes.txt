@@ -1,13 +1,6 @@
-fake fifty
-fake five hundred
-fake one hundred
-fake one thousand
-fake twenty
-fake two hundred
 real fifty
 real fifty rupees
 real fifty us dollars
-real fiftyrupees
 real fiftythousand won
 real five hundred
 real five hundred taiwan dollar

@@ -67,8 +67,9 @@
     <!--    INFO TEXT HERE-->
     <ImageView
         android:id="@+id/boxed"
-        android:layout_width="328dp"
-        android:layout_height="347dp"
+        android:layout_width="339dp"
+        android:layout_height="452dp"
+        android:alpha="0.6"
         android:background="@drawable/rounded_green_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,20 +94,20 @@
 
     <TextView
         android:id="@+id/capture"
-        android:layout_width="298dp"
-        android:layout_height="279dp"
+        android:layout_width="313dp"
+        android:layout_height="384dp"
         android:text="@string/about_us"
-        android:textAlignment="center"
         android:textColor="@color/color_black"
         android:textSize="15dp"
+        android:layout_gravity="start|bottom"
         app:layout_constraintBottom_toBottomOf="@+id/boxed"
         app:layout_constraintEnd_toEndOf="@+id/boxed"
-        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="@+id/boxed"
         app:layout_constraintTop_toTopOf="@+id/boxed"
-        app:layout_constraintVertical_bias="0.867" />
+        app:layout_constraintVertical_bias="0.838" />
+
 
     <!--        Comment this to hide the nav_drawer -->
-<!--    <include layout="@layout/nav_drawer" />-->
+    <include layout="@layout/nav_drawer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -255,64 +255,64 @@ public class ScanResultActivity extends AppCompatActivity {
         } else if (cleanedContent.equalsIgnoreCase("realone hundredrupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("100");
-        } else if (cleanedContent.equalsIgnoreCase("fake fifty")) {
-            currecnyresult.setText("Counterfeit");
-            valueresult.setText("Counterfeit");
-            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
-            wrongIcon.setImageResource(R.drawable.wrong1);
-            TextView linkTextView = findViewById(R.id.link);
-            linkTextView.setText("Why it is a Counterfeit?");
-            linkTextView.setTextColor(Color.BLUE);
-            linkTextView.setClickable(true);
-        } else if (cleanedContent.equalsIgnoreCase("fake twenty")) {
-            currecnyresult.setText("Counterfeit");
-            valueresult.setText("Counterfeit");
-            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
-            wrongIcon.setImageResource(R.drawable.wrong1);
-            TextView linkTextView = findViewById(R.id.link);
-            linkTextView.setText("Why it is a Counterfeit?");
-            linkTextView.setTextColor(Color.BLUE);
-            linkTextView.setClickable(true);
-        } else if (cleanedContent.equalsIgnoreCase("fake one hundred")) {
-            currecnyresult.setText("Counterfeit");
-            valueresult.setText("Counterfeit");
-            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
-            wrongIcon.setImageResource(R.drawable.wrong1);
-            TextView linkTextView = findViewById(R.id.link);
-            linkTextView.setText("Why it is a Counterfeit?");
-            linkTextView.setTextColor(Color.BLUE);
-            linkTextView.setClickable(true);
-        } else if (cleanedContent.equalsIgnoreCase("fake five hundred")) {
-            currecnyresult.setText("Counterfeit");
-            valueresult.setText("Counterfeit");
-            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
-            wrongIcon.setImageResource(R.drawable.wrong1);
-            TextView linkTextView = findViewById(R.id.link);
-            linkTextView.setText("Why it is a Counterfeit?");
-            linkTextView.setTextColor(Color.BLUE);
-            linkTextView.setClickable(true);
-        } else if (cleanedContent.equalsIgnoreCase("fake two hundred")) {
-            currecnyresult.setText("Counterfeit");
-            valueresult.setText("Counterfeit");
-            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
-            wrongIcon.setImageResource(R.drawable.wrong1);
-            TextView linkTextView = findViewById(R.id.link);
-            linkTextView.setText("Why it is a Counterfeit?");
-            linkTextView.setTextColor(Color.BLUE);
-            linkTextView.setClickable(true);
-        } else if (cleanedContent.equalsIgnoreCase("fake one thousand")) {
-            currecnyresult.setText("Counterfeit");
-            valueresult.setText("Counterfeit");
-            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
-            wrongIcon.setImageResource(R.drawable.wrong1);
-            TextView linkTextView = findViewById(R.id.link);
-            linkTextView.setText("Why it is a Counterfeit?");
-            linkTextView.setTextColor(Color.BLUE);
-            linkTextView.setClickable(true);
+//        } else if (cleanedContent.equalsIgnoreCase("fake fifty")) {
+//            currecnyresult.setText("Counterfeit");
+//            valueresult.setText("Counterfeit");
+//            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+//            wrongIcon.setImageResource(R.drawable.wrong1);
+//            TextView linkTextView = findViewById(R.id.link);
+//            linkTextView.setText("Why it is a Counterfeit?");
+//            linkTextView.setTextColor(Color.BLUE);
+//            linkTextView.setClickable(true);
+//        } else if (cleanedContent.equalsIgnoreCase("fake twenty")) {
+//            currecnyresult.setText("Counterfeit");
+//            valueresult.setText("Counterfeit");
+//            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+//            wrongIcon.setImageResource(R.drawable.wrong1);
+//            TextView linkTextView = findViewById(R.id.link);
+//            linkTextView.setText("Why it is a Counterfeit?");
+//            linkTextView.setTextColor(Color.BLUE);
+//            linkTextView.setClickable(true);
+//        } else if (cleanedContent.equalsIgnoreCase("fake one hundred")) {
+//            currecnyresult.setText("Counterfeit");
+//            valueresult.setText("Counterfeit");
+//            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+//            wrongIcon.setImageResource(R.drawable.wrong1);
+//            TextView linkTextView = findViewById(R.id.link);
+//            linkTextView.setText("Why it is a Counterfeit?");
+//            linkTextView.setTextColor(Color.BLUE);
+//            linkTextView.setClickable(true);
+//        } else if (cleanedContent.equalsIgnoreCase("fake five hundred")) {
+//            currecnyresult.setText("Counterfeit");
+//            valueresult.setText("Counterfeit");
+//            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+//            wrongIcon.setImageResource(R.drawable.wrong1);
+//            TextView linkTextView = findViewById(R.id.link);
+//            linkTextView.setText("Why it is a Counterfeit?");
+//            linkTextView.setTextColor(Color.BLUE);
+//            linkTextView.setClickable(true);
+//        } else if (cleanedContent.equalsIgnoreCase("fake two hundred")) {
+//            currecnyresult.setText("Counterfeit");
+//            valueresult.setText("Counterfeit");
+//            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+//            wrongIcon.setImageResource(R.drawable.wrong1);
+//            TextView linkTextView = findViewById(R.id.link);
+//            linkTextView.setText("Why it is a Counterfeit?");
+//            linkTextView.setTextColor(Color.BLUE);
+//            linkTextView.setClickable(true);
+//        } else if (cleanedContent.equalsIgnoreCase("fake one thousand")) {
+//            currecnyresult.setText("Counterfeit");
+//            valueresult.setText("Counterfeit");
+//            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+//            wrongIcon.setImageResource(R.drawable.wrong1);
+//            TextView linkTextView = findViewById(R.id.link);
+//            linkTextView.setText("Why it is a Counterfeit?");
+//            linkTextView.setTextColor(Color.BLUE);
+//            linkTextView.setClickable(true);
         } else {
             // Handle other cases or provide a default value
-            currecnyresult.setText("Unknown Currency");
-            valueresult.setText("N/A");
+            currecnyresult.setText("Please scan it again \n It can be Counterfeit");
+            valueresult.setText("Counterfeit");
             ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
             wrongIcon.setImageResource(R.drawable.wrong1);
         }

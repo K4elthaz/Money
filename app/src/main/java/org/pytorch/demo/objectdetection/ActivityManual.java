@@ -124,7 +124,17 @@ public class ActivityManual extends AppCompatActivity {
         Bitmap capturedImage = getIntent().getParcelableExtra("captured_image");
 
         if (capturedImage != null) {
-            mBitmap = capturedImage;
+            // Check if the image is in portrait mode
+            if (capturedImage.getHeight() > capturedImage.getWidth()) {
+                Matrix matrix = new Matrix();
+                matrix.postRotate(90); // Rotate 90 degrees for landscape
+
+                // Rotate the image
+                mBitmap = Bitmap.createBitmap(capturedImage, 0, 0, capturedImage.getWidth(), capturedImage.getHeight(), matrix, true);
+            } else {
+                mBitmap = capturedImage;
+            }
+
             mImageView.setImageBitmap(mBitmap);
             mButtonDetect = findViewById(R.id.detectButton);
             mButtonDetect.postDelayed(new Runnable() {
@@ -135,7 +145,7 @@ public class ActivityManual extends AppCompatActivity {
             }, 100); // Programmatically trigger detection
         } else {
             // Load the default image
-//            loadDefaultImage();
+            // loadDefaultImage();
         }
 
         // Hide resultView
@@ -226,7 +236,7 @@ public class ActivityManual extends AppCompatActivity {
         });
 
         try {
-            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "bestMoney.torchscript.ptl"));
+            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "bestM.torchscript.ptl"));
             BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();
@@ -360,8 +370,16 @@ public class ActivityManual extends AppCompatActivity {
                 case 0: // photo taken
                     if (resultCode == RESULT_OK && data != null) {
                         mBitmap = (Bitmap) data.getExtras().get("data");
-                        Matrix matrix = new Matrix();
-                        mBitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(), matrix, true);
+
+                        // Check if the image is in portrait mode
+                        if (mBitmap.getHeight() > mBitmap.getWidth()) {
+                            Matrix matrix = new Matrix();
+                            matrix.postRotate(90); // Rotate 90 degrees for landscape
+
+                            // Rotate the bitmap
+                            mBitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(), matrix, true);
+                        }
+
                         mImageView.setImageBitmap(mBitmap);
                     }
                     break;

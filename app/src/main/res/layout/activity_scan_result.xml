@@ -92,6 +92,9 @@
         app:layout_constraintStart_toStartOf="@+id/boxed"
         app:layout_constraintTop_toBottomOf="@+id/activityresutltscan1" />
 
+
+    <!--    CURRENCY TEXT RESULT-->
+
     <TextView
         android:id="@+id/textview12"
         android:layout_width="wrap_content"
@@ -106,10 +109,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/boxed"
         app:layout_constraintEnd_toEndOf="@+id/boxed"
         app:layout_constraintStart_toStartOf="@+id/boxed"
-        app:layout_constraintTop_toBottomOf="@+id/rightorwrongicon" />
-
-
-    <!--    CURRENCY TEXT RESULT-->
+        app:layout_constraintTop_toBottomOf="@+id/rightorwrongicon"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/parentLayout"
@@ -124,9 +125,10 @@
         <TextView
             android:id="@+id/textview14"
             android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="56dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="7dp"
             android:layout_marginBottom="12dp"
             android:text="Classification:"
             android:textAlignment="center"
@@ -140,7 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="12dp"
             android:textAlignment="center"
             android:textColor="@color/color_black"
@@ -149,47 +151,45 @@
     </LinearLayout>
 
 
+    <!--    VALUE TEXT RESULT-->
+
+    <!--    Convert Btn-->
+
     <TextView
         android:id="@+id/textview15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="228dp"
-        android:layout_marginBottom="104dp"
         android:text="Currency:"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="17dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintBottom_toBottomOf="@+id/valueResult"
         app:layout_constraintEnd_toEndOf="@+id/boxed"
-        app:layout_constraintStart_toStartOf="@+id/boxed"
-        app:layout_constraintTop_toBottomOf="@+id/textview14" />
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parentLayout"
+        app:layout_constraintVertical_bias="0.136" />
 
     <TextView
         android:id="@+id/currencyResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="104dp"
         android:textAlignment="center"
         android:textColor="@color/color_black"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintBottom_toTopOf="@+id/link"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toEndOf="@+id/textview15"
-        app:layout_constraintTop_toBottomOf="@+id/classificationResult" />
-
-    <!--    VALUE TEXT RESULT-->
+        app:layout_constraintTop_toBottomOf="@+id/parentLayout"
+        app:layout_constraintVertical_bias="0.098" />
 
     <TextView
         android:id="@+id/textview16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="226dp"
         android:text="Value:"
@@ -199,40 +199,40 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/boxed"
         app:layout_constraintEnd_toEndOf="@+id/boxed"
-        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="@+id/parentLayout"
         app:layout_constraintTop_toBottomOf="@+id/textview15"
         app:layout_constraintVertical_bias="0.0" />
 
-    <!--    Convert Btn-->
     <TextView
         android:id="@+id/valueResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:textAlignment="center"
         android:textColor="@color/color_black"
         android:textSize="17sp"
         android:textStyle="bold"
+        android:layout_marginTop="13dp"
         app:layout_constraintBottom_toBottomOf="@+id/boxed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toEndOf="@+id/textview16"
-        app:layout_constraintTop_toBottomOf="@+id/currencyResult"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/parentLayout"
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/link"
         android:layout_width="164dp"
         android:layout_height="29dp"
-        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:text=""
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/boxed"
         app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="@+id/boxed"
-        app:layout_constraintTop_toBottomOf="@+id/textview16"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/parentLayout"
+        app:layout_constraintVertical_bias="0.893" />
 
     <ImageView
         android:id="@+id/finalConBtn"

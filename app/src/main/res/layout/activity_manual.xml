@@ -81,32 +81,33 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--   ADD FUNCTION HIDE VISIBILITY ng textView3 if the resultview is not empty-->
+
     <ImageView
         android:id="@+id/frntbankNote"
-        android:layout_width="360dp"
-        android:layout_height="164dp"
+        android:layout_width="276dp"
+        android:layout_height="154dp"
         android:layout_marginTop="56dp"
         android:adjustViewBounds="true"
         android:background="@drawable/captureimage1"
         android:contentDescription="@string/image_view"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1" />
 
     <org.pytorch.demo.objectdetection.ResultView
         android:id="@+id/resultView"
-        android:layout_width="360dp"
-        android:layout_height="164dp"
+        android:layout_width="275dp"
+        android:layout_height="155dp"
         android:layout_marginTop="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDetect"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1" />
-
-    <!--   ADD FUNCTION HIDE VISIBILITY ng textView3 if the resultview is not empty-->
+        app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView3"
