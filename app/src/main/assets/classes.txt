@@ -1,28 +1,32 @@
-real fifty
-real fifty rupees
-real fifty us dollars
-real fiftythousand won
-real five hundred
-real five hundred taiwan dollar
-real five hundredrupees
-real five thousand won
-real five us dollars
-real fivethousand yen
-real one hundred
-real one hundred dollars
-real one hundred taiwan dollar
-real one thousand
-real one thousand taiwan dollar
-real one thousand won
-real one thousand yen
-real one us dollar
-real ten rupees
-real ten thousand won
-real ten us dollars
-real tenthousand yen
-real twenty
-real twenty us dollars
-real twentyrupees
-real two hundred
-real two us dollars
-realone hundredrupees
+
+
+Five Hundred Rupees
+One Hundred Rupees
+Ten Rupees
+Twenty Rupees
+Two Hundred Rupees
+Two Thousand Rupees
+fifty dollars back
+fifty dollars front
+fifty pesos
+fifty thousand won
+five dollars back
+five dollars front
+five hundred pesos
+five thousand won
+five thousand yen
+one dollar back
+one dollar front
+one hundred pesos
+one thousand pesos
+one thousand won
+one thousand yen
+ten dollars back
+ten dollars front
+ten thousand won
+ten thousand yen
+twenty dollars back
+twenty dollars front
+twenty pesos
+two hundred pesos
+two thousand yen

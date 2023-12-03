@@ -109,6 +109,19 @@
         app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1"
         app:layout_constraintVertical_bias="0.0" />
 
+
+    <Button
+        android:id="@+id/selectButton"
+        android:layout_width="224dp"
+        android:layout_height="83dp"
+        android:background="@drawable/upload1"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        android:alpha=".0"
+        app:layout_constraintTop_toTopOf="@+id/frntbankNote" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -200,14 +213,7 @@
 
 
         <!--        ETO NAMAN YUNG button sa para ma detect na nya yung nandun sa imageview -->
-        <Button
-            android:id="@+id/detectButton"
-            android:layout_width="224dp"
-            android:layout_height="83dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/scan1"
-            android:onClick="onDetectButtonClick"
-            tools:ignore="OnClick" />
+
 
 
         <!--        <Button-->
@@ -220,18 +226,19 @@
 
 
         <!--        ETO YUNG BUTTON DUN SA UPLOAD -->
+
         <Button
-            android:id="@+id/selectButton"
+            android:id="@+id/detectButton"
             android:layout_width="224dp"
             android:layout_height="83dp"
-            android:background="@drawable/upload1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/scan1"
+            android:onClick="onDetectButtonClick"
+            tools:ignore="OnClick" />
 
     </LinearLayout>
 
     <!--    Comment this to hide the nav_drawer -->
-    <include layout="@layout/nav_drawer" />
+  <include layout="@layout/nav_drawer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

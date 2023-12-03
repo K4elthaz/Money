@@ -127,7 +127,7 @@ public class ActivityManual extends AppCompatActivity {
             // Check if the image is in portrait mode
             if (capturedImage.getHeight() > capturedImage.getWidth()) {
                 Matrix matrix = new Matrix();
-                matrix.postRotate(90); // Rotate 90 degrees for landscape
+                matrix.postRotate(180); // Rotate 90 degrees for landscape
 
                 // Rotate the image
                 mBitmap = Bitmap.createBitmap(capturedImage, 0, 0, capturedImage.getWidth(), capturedImage.getHeight(), matrix, true);
@@ -236,7 +236,7 @@ public class ActivityManual extends AppCompatActivity {
         });
 
         try {
-            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "bestM.torchscript.ptl"));
+            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "bestNew.torchscript.ptl"));
             BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();
