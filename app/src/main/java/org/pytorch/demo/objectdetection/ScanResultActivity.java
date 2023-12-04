@@ -126,12 +126,16 @@ public class ScanResultActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Get the value from valueresult TextView
                 String value = valueresult.getText().toString();
+                // Get the value from currecnyresult TextView
+                String currencyResult = currecnyresult.getText().toString();
 
                 // Create an intent to start ConvertCurrencyActivity
                 Intent intent = new Intent(ScanResultActivity.this, convert_real.class);
 
                 // Put the value as an extra in the intent
                 intent.putExtra("valueResult", value);
+
+                intent.putExtra("currencyResult", currencyResult);
 
                 // Start the ConvertCurrencyActivity
                 startActivity(intent);
@@ -329,4 +333,5 @@ public class ScanResultActivity extends AppCompatActivity {
             wrongIcon.setImageResource(R.drawable.wrong1);
         }
     }
+
 }

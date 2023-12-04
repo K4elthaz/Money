@@ -96,6 +96,27 @@
         <item>KRW</item>
     </string-array>
 
+    <string-array name="currency_pesos">
+        <item>PHP</item>
+    </string-array>
+
+    <string-array name="currency_rupees">
+        <item>IDR</item>
+    </string-array>
+
+    <string-array name="currency_dollars">
+        <item>USD</item>
+    </string-array>
+
+    <string-array name="currency_yen">
+        <item>JPY</item>
+    </string-array>
+
+    <string-array name="currency_won">
+        <item>KRW</item>
+    </string-array>
+
+
     <string name="fromHint">Enter Amount</string>
     <string name="toHint">Press Convert</string>
     <string name="convertText">Convert</string>
