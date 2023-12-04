@@ -171,100 +171,100 @@ public class ScanResultActivity extends AppCompatActivity {
         classresult.setText(content);
         String cleanedContent = content.replaceAll("[^a-zA-Z ]", "").trim();
 
-        if (cleanedContent.equalsIgnoreCase("Fifty Rupees")) {
+        if (cleanedContent.equalsIgnoreCase("Genuine Fifty Rupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("50");
-        } else if (cleanedContent.equalsIgnoreCase("FiftyRupees")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine FiftyRupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("50");
-        } else if (cleanedContent.equalsIgnoreCase("Five Hundred Rupees")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine Five Hundred Rupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("500");
-        } else if (cleanedContent.equalsIgnoreCase("One Hundred Rupees")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine One Hundred Rupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("100");
-        } else if (cleanedContent.equalsIgnoreCase("Ten Rupees")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine Ten Rupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("10");
-        } else if (cleanedContent.equalsIgnoreCase("Twenty Rupees")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine Twenty Rupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("20");
-        } else if (cleanedContent.equalsIgnoreCase("Two Hundred Rupees")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine Two Hundred Rupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("200");
-        } else if (cleanedContent.equalsIgnoreCase("Two Thousand Rupees")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine Two Thousand Rupees")) {
             currecnyresult.setText("Rupees");
             valueresult.setText("2000");
-        } else if (cleanedContent.equalsIgnoreCase("fifty dollars back")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine fifty dollars back")) {
             currecnyresult.setText("Dollars");
             valueresult.setText("50");
-        } else if (cleanedContent.equalsIgnoreCase("fifty dollars front")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine fifty dollars front")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("50");
-        } else if (cleanedContent.equalsIgnoreCase("fifty pesos")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine fifty pesos")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("50");
-        } else if (cleanedContent.equalsIgnoreCase("fifty thousand won")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine fifty thousand won")) {
             currecnyresult.setText("Won");
             valueresult.setText("50000");
-        } else if (cleanedContent.equalsIgnoreCase("five dollars back")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine five dollars back")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("5");
-        } else if (cleanedContent.equalsIgnoreCase("five dollars front")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine five dollars front")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("5");
-        } else if (cleanedContent.equalsIgnoreCase("five hundred pesos")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine five hundred pesos")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("500");
-        } else if (cleanedContent.equalsIgnoreCase("five thousand won")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine five thousand won")) {
             currecnyresult.setText("Won");
             valueresult.setText("5000");
-        } else if (cleanedContent.equalsIgnoreCase("five thousand yen")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine five thousand yen")) {
             currecnyresult.setText("Yen");
             valueresult.setText("5000");
-        } else if (cleanedContent.equalsIgnoreCase("one dollar back")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine one dollar back")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("1");
-        } else if (cleanedContent.equalsIgnoreCase("one dollar front")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine one dollar front")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("1");
-        } else if (cleanedContent.equalsIgnoreCase("one hundred pesos")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine one hundred pesos")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("100");
-        } else if (cleanedContent.equalsIgnoreCase("one thousand pesos")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine one thousand pesos")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("1000");
-        } else if (cleanedContent.equalsIgnoreCase("one thousand won")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine one thousand won")) {
             currecnyresult.setText("Won");
             valueresult.setText("1000");
-        } else if (cleanedContent.equalsIgnoreCase("one thousand yen")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine one thousand yen")) {
             currecnyresult.setText("Yen");
             valueresult.setText("1000");
-        } else if (cleanedContent.equalsIgnoreCase("ten dollars back")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine ten dollars back")) {
             currecnyresult.setText("Dollars");
             valueresult.setText("10");
-        } else if (cleanedContent.equalsIgnoreCase("ten dollars front")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine ten dollars front")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("10");
-        } else if (cleanedContent.equalsIgnoreCase("ten thousand won")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine ten thousand won")) {
             currecnyresult.setText("Won");
             valueresult.setText("10000");
-        } else if (cleanedContent.equalsIgnoreCase("ten thousand yen")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine ten thousand yen")) {
             currecnyresult.setText("Yen");
             valueresult.setText("10000");
-        } else if (cleanedContent.equalsIgnoreCase("twenty dollars back")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine twenty dollars back")) {
             currecnyresult.setText("Dollars");
             valueresult.setText("20");
-        } else if (cleanedContent.equalsIgnoreCase("twenty dollars front")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine twenty dollars front")) {
             currecnyresult.setText("Dollars");
             valueresult.setText("20");
-        } else if (cleanedContent.equalsIgnoreCase("twenty pesos")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine twenty pesos")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("20");
-        } else if (cleanedContent.equalsIgnoreCase("two hundred pesos")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine two hundred pesos")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("200");
-        } else if (cleanedContent.equalsIgnoreCase("two thousand yen")) {
+        } else if (cleanedContent.equalsIgnoreCase("Genuine two thousand yen")) {
             currecnyresult.setText("Yen");
             valueresult.setText("2000");
 //        } else if (cleanedContent.equalsIgnoreCase("fake fifty")) {

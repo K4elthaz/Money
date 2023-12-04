@@ -203,7 +203,7 @@
             android:layout_width="224dp"
             android:layout_height="83dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/scan1"
+            android:background="@drawable/process1"
             android:onClick="onDetectButtonClick"
             tools:ignore="OnClick"/>
 

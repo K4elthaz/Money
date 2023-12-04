@@ -29,7 +29,7 @@ public class convert_real extends AppCompatActivity {
     private ImageView icon1, icon2, icon3, hide, sideb, hbtn, bbtn;
 
     EditText fromInput, toOutput;
-    Button convertButton;
+    ImageView convertButton;
     Spinner fromDropdown, toDropdown;
     String fromCurrency, toCurrency;
 
