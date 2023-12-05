@@ -174,103 +174,124 @@ public class ScanResultActivity extends AppCompatActivity {
     private void updateTextViewContent(String content) {
         classresult.setText(content);
         String cleanedContent = content.replaceAll("[^a-zA-Z ]", "").trim();
-
-        if (cleanedContent.equalsIgnoreCase("Genuine Fifty Rupees")) {
-            currecnyresult.setText("Rupees");
+        ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+        wrongIcon.setImageResource(R.drawable.right1);
+        if (cleanedContent.equalsIgnoreCase("Genuine 50 Euro")) {
+            currecnyresult.setText("Euro");
             valueresult.setText("50");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine FiftyRupees")) {
-            currecnyresult.setText("Rupees");
-            valueresult.setText("50");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine Five Hundred Rupees")) {
-            currecnyresult.setText("Rupees");
-            valueresult.setText("500");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine One Hundred Rupees")) {
-            currecnyresult.setText("Rupees");
-            valueresult.setText("100");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine Ten Rupees")) {
-            currecnyresult.setText("Rupees");
-            valueresult.setText("10");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine Twenty Rupees")) {
-            currecnyresult.setText("Rupees");
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 5 Euro")) {
+            currecnyresult.setText("Euro");
+            valueresult.setText("5");
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 20 Euro")) {
+            currecnyresult.setText("Euro");
             valueresult.setText("20");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine Two Hundred Rupees")) {
-            currecnyresult.setText("Rupees");
-            valueresult.setText("200");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine Two Thousand Rupees")) {
-            currecnyresult.setText("Rupees");
-            valueresult.setText("2000");
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 100 Euro")) {
+            currecnyresult.setText("Eruo");
+            valueresult.setText("100");
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 10 Euro")) {
+            currecnyresult.setText("Euro");
+            valueresult.setText("20");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine fifty dollars back")) {
             currecnyresult.setText("Dollars");
             valueresult.setText("50");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine fifty dollars front")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("50");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine fifty pesos")) {
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 50 Peso")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("50");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine fifty thousand won")) {
             currecnyresult.setText("Won");
             valueresult.setText("50000");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine five dollars back")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("5");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine five dollars front")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("5");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine five hundred pesos")) {
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 500 Peso")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("500");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine five thousand won")) {
             currecnyresult.setText("Won");
             valueresult.setText("5000");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine five thousand yen")) {
             currecnyresult.setText("Yen");
             valueresult.setText("5000");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine one dollar back")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("1");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine one dollar front")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("1");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine one hundred pesos")) {
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 100 Peso")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("100");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine one thousand pesos")) {
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 1000 Peso")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("1000");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine one thousand won")) {
             currecnyresult.setText("Won");
             valueresult.setText("1000");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine one thousand yen")) {
             currecnyresult.setText("Yen");
             valueresult.setText("1000");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine ten dollars back")) {
             currecnyresult.setText("Dollars");
             valueresult.setText("10");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine ten dollars front")) {
             currecnyresult.setText("Dollar");
             valueresult.setText("10");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine ten thousand won")) {
             currecnyresult.setText("Won");
             valueresult.setText("10000");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine ten thousand yen")) {
             currecnyresult.setText("Yen");
             valueresult.setText("10000");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine twenty dollars back")) {
             currecnyresult.setText("Dollars");
             valueresult.setText("20");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine twenty dollars front")) {
             currecnyresult.setText("Dollars");
             valueresult.setText("20");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine twenty pesos")) {
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 20 Peso")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("20");
-        } else if (cleanedContent.equalsIgnoreCase("Genuine two hundred pesos")) {
+            wrongIcon.setImageResource(R.drawable.right1);
+        } else if (cleanedContent.equalsIgnoreCase("Genuine 200 Peso")) {
             currecnyresult.setText("Pesos");
             valueresult.setText("200");
+            wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine two thousand yen")) {
             currecnyresult.setText("Yen");
             valueresult.setText("2000");
+            wrongIcon.setImageResource(R.drawable.right1);
 //        } else if (cleanedContent.equalsIgnoreCase("fake fifty")) {
 //            currecnyresult.setText("Counterfeit");
 //            valueresult.setText("Counterfeit");
@@ -329,7 +350,7 @@ public class ScanResultActivity extends AppCompatActivity {
             // Handle other cases or provide a default value
             currecnyresult.setText("Please scan it again \n It can be Counterfeit");
             valueresult.setText("Counterfeit");
-            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+//            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
             wrongIcon.setImageResource(R.drawable.wrong1);
         }
     }

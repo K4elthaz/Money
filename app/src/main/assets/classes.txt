@@ -1,24 +1,23 @@
-
-
-Genuine Five Hundred Rupees
-Genuine One Hundred Rupees
-Genuine Ten Rupees
-Genuine Twenty Rupees
-Genuine Two Hundred Rupees
-Genuine Two Thousand Rupees
+Genuine 1000 Peso
+Genuine 100 Peso
+Genuine 200 Peso
+Genuine 20 Peso
+Genuine 500 Peso
+Genuine 50 Peso
+Genuine 10 Euro
+Genuine 100 Euro
+Genuine 20 Euro
+Genuine 5 Euro
+Genuine 50 Euro
 Genuine fifty dollars back
 Genuine fifty dollars front
-Genuine fifty pesos
 Genuine fifty thousand won
 Genuine five dollars back
 Genuine five dollars front
-Genuine five hundred pesos
 Genuine five thousand won
 Genuine five thousand yen
 Genuine one dollar back
 Genuine one dollar front
-Genuine one hundred pesos
-Genuine one thousand pesos
 Genuine one thousand won
 Genuine one thousand yen
 Genuine ten dollars back
@@ -27,6 +26,4 @@ Genuine ten thousand won
 Genuine ten thousand yen
 Genuine twenty dollars back
 Genuine twenty dollars front
-Genuine twenty pesos
-Genuine two hundred pesos
 Genuine two thousand yen
