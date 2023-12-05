@@ -189,7 +189,7 @@ public class ScanResultActivity extends AppCompatActivity {
             valueresult.setText("20");
             wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine 100 Euro")) {
-            currecnyresult.setText("Eruo");
+            currecnyresult.setText("Euro");
             valueresult.setText("100");
             wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine 10 Euro")) {
@@ -348,10 +348,10 @@ public class ScanResultActivity extends AppCompatActivity {
 //            linkTextView.setClickable(true);
         } else {
             // Handle other cases or provide a default value
-            currecnyresult.setText("Please scan it again \n It can be Counterfeit");
-            valueresult.setText("Counterfeit");
-//            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
-            wrongIcon.setImageResource(R.drawable.wrong1);
+//            currecnyresult.setText("Please scan it again \n It can be Counterfeit");
+//            valueresult.setText("Counterfeit");
+////            ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
+//            wrongIcon.setImageResource(R.drawable.wrong1);
         }
     }
 
