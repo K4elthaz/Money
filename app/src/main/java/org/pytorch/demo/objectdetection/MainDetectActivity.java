@@ -205,7 +205,7 @@ public class MainDetectActivity extends AppCompatActivity {
 
         // Try to load our trained YOLOv5 model
         try {
-            mModule = LiteModuleLoader.load(MainDetectActivity.assetFilePath(getApplicationContext(), "bestMdtect.torchscript.ptl"));
+            mModule = LiteModuleLoader.load(MainDetectActivity.assetFilePath(getApplicationContext(), "420.torchscript.ptl"));
             BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();

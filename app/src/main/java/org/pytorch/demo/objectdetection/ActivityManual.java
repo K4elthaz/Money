@@ -236,7 +236,7 @@ public class ActivityManual extends AppCompatActivity {
         });
 
         try {
-            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "bestMdtect.torchscript.ptl"));
+            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "420.torchscript.ptl"));
             BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();
