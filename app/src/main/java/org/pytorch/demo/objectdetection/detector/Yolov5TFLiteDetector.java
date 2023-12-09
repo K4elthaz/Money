@@ -39,7 +39,7 @@ import java.util.PriorityQueue;
 public class Yolov5TFLiteDetector {
 
     private final Size INPNUT_SIZE = new Size(640, 640);
-    private final int[] OUTPUT_SIZE = new int[]{1, 25200, 34};
+    private final int[] OUTPUT_SIZE = new int[]{1, 25200, 51};
     private Boolean IS_INT8 = false;
     private final float DETECT_THRESHOLD = 0.2f;
     private final float IOU_THRESHOLD = 0.45f;
