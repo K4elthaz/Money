@@ -44,72 +44,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
             // ...
         }
 
-//        mAuth = FirebaseAuth.getInstance();
-//        editTextEmail = findViewById(R.id.email_edittext);
-//        editTextPassword = findViewById(R.id.password_edittext);
-//        buttonLogin = findViewById(R.id.login_button);
-//        buttonLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // code to be executed when button is clicked
-//                String email, password;
-//                email = String.valueOf((editTextEmail.getText()));
-//                password = String.valueOf((editTextPassword.getText()));
-//
-//                if (TextUtils.isEmpty((email))) {
-//                    Toast.makeText(MainActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                if (TextUtils.isEmpty((password))) {
-//                    Toast.makeText(MainActivity.this, "Enter Password", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                mAuth.signInWithEmailAndPassword(email, password)
-//                        .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<AuthResult> task) {
-//                                if (task.isSuccessful()) {
-//                                    // Sign in success, update UI with the signed-in user's information
-//                                    FirebaseUser user = mAuth.getCurrentUser();
-//                                    Intent i = new Intent(MainActivity.this, HomeActivity.class);
-//                                    startActivity(i);
-//                                } else {
-//                                    // If sign in fails, display a message to the user.
-//                                    Toast.makeText(MainActivity.this, "Authentication failed.",
-//                                            Toast.LENGTH_SHORT).show();
-//                                }
-//                            }
-//                        });
-//
-//
-//
-//
-//
-//
-//            }
-//        });
 
-//        TextView passwordLink = findViewById(R.id.password_link);
-//        passwordLink.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Handle the click event for the password link here
-//                // Open the ForgotPasswordActivity when the password link is clicked
-//                Intent intent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        TextView signUpLink = findViewById(R.id.create_account);
-//        signUpLink.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Handle the click event for the sign-up link here
-//                // Open the RegisterActivity when the sign-up link is clicked
-//                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
     }
 

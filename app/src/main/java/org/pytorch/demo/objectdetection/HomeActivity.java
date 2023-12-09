@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -24,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private ConstraintLayout navMenu;
 
-    private ImageView icon1,icon2,icon3,hide,sideb,capb,upb,conb;
+    private ImageView icon1,icon2,icon3,hide,sideb,capb,upb,conb,live;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         upb = findViewById(R.id.uploadImgBtn);
         conb = findViewById(R.id.convertImgBtn);
         navMenu.setVisibility(View.GONE);
+        live = findViewById(R.id.live);
 
 //        MENU BAR BTN CLICKLISTINER
         icon1.setOnClickListener(new View.OnClickListener() {
@@ -91,19 +93,15 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-//        Capture BTN
-//        NEED NG BACKEND CODE PARA MA OPEN YUNG CAPTURE UI
-//        CONNECTED SA RESULTVIEW.JAVA
 
 
-//        ImageView captureButton = findViewById(R.id.captureImgBtn);
-//        captureButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(HomeActivity.this, Capture.class);
-//                startActivity(i);
-//            }
-//        });
+        live.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, MainActivity2.class);
+                startActivity(i);
+            }
+        });
 
 //        UPLOAD BTN
         ImageView uploadBtn = findViewById(R.id.uploadImgBtn);

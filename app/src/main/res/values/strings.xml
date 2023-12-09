@@ -121,5 +121,10 @@
     <string name="toHint">Press Convert</string>
     <string name="convertText">Convert</string>
     <string name="toCTA">↓</string>
-
+    <string-array name="model">
+        <item>Money1</item>
+        <item>Money2 </item>
+        <item>Money3</item>
+        <item>Money4-int8</item>
+    </string-array>
 </resources>

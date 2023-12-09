@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg21"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -63,6 +63,16 @@
             android:layout_height="90dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/upload1"
+            android:clickable="true"
+            app:layout_constraintBottom_toTopOf="@+id/convertImgBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/live"
+            android:layout_width="242dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/live"
             android:clickable="true"
             app:layout_constraintBottom_toTopOf="@+id/convertImgBtn"
             app:layout_constraintEnd_toEndOf="parent"

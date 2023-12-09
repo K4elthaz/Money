@@ -128,7 +128,7 @@ public class ScanResultActivity extends AppCompatActivity {
                 // Get the value from valueresult TextView
                 String value = valueresult.getText().toString();
                 // Get the value from currecnyresult TextView
-//                String currencyResult = currecnyresult.getText().toString();
+                String currencyResult = currecnyresult.getText().toString();
 
                 // Create an intent to start ConvertCurrencyActivity
                 Intent intent = new Intent(ScanResultActivity.this, convert_real.class);
@@ -136,7 +136,7 @@ public class ScanResultActivity extends AppCompatActivity {
                 // Put the value as an extra in the intent
                 intent.putExtra("valueResult", value);
 //
-//                intent.putExtra("currencyResult", currencyResult);
+                intent.putExtra("currencyResult", currencyResult);
 
                 // Start the ConvertCurrencyActivity
                 startActivity(intent);
@@ -178,7 +178,6 @@ public class ScanResultActivity extends AppCompatActivity {
         String cleanedContent = content.replaceAll("[^a-zA-Z ]", "").trim();
         ImageView wrongIcon = findViewById(R.id.rightorwrongicon);
         Log.d("Debug", "Cleaned Content: " + cleanedContent);
-        wrongIcon.setImageResource(R.drawable.right1);
 
         if (cleanedContent.equalsIgnoreCase("Genuine 50 Euro")) {
             currecnyresult.setText("Euro");
@@ -300,7 +299,7 @@ public class ScanResultActivity extends AppCompatActivity {
 //             Handle other cases or provide a default value
             currecnyresult.setText("Please scan it again \n It can be Counterfeit");
             valueresult.setText("Counterfeit");
-//            wrongIcon.setImageResource(R.drawable.wrong1);
+            wrongIcon.setImageResource(R.drawable.wrong1);
         }
     }
 

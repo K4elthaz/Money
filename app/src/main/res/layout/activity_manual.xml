@@ -85,11 +85,11 @@
 
     <ImageView
         android:id="@+id/frntbankNote"
-        android:layout_width="276dp"
+        android:layout_width="377dp"
         android:layout_height="154dp"
         android:layout_marginTop="56dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/uploadimage1"
+        android:background="@drawable/up"
         android:contentDescription="@string/image_view"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +99,8 @@
 
     <org.pytorch.demo.objectdetection.ResultView
         android:id="@+id/resultView"
-        android:layout_width="275dp"
-        android:layout_height="155dp"
+        android:layout_width="366dp"
+        android:layout_height="162dp"
         android:layout_marginTop="56dp"
         app:layout_constraintBottom_toTopOf="@+id/textViewDetect"
         app:layout_constraintDimensionRatio="1:1"

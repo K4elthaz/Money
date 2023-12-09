@@ -5,7 +5,8 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -76,6 +77,11 @@
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
