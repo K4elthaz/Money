@@ -1,29 +1,46 @@
-Genuine 1000 Peso
-Genuine 100 Peso
-Genuine 200 Peso
-Genuine 20 Peso
-Genuine 500 Peso
-Genuine 50 Peso
-Genuine 10 Euro
-Genuine 100 Euro
-Genuine 20 Euro
-Genuine 5 Euro
-Genuine 50 Euro
-Genuine fifty dollars back
-Genuine fifty dollars front
+Counterfeit fifty dollars
+Counterfeit fifty peso
+Counterfeit fifty thousand won
+Counterfeit five dollars
+Counterfeit five hundred peso
+Counterfeit five hundred taiwan dollar
+Counterfeit five thousand won
+Counterfeit five thousand yen
+Counterfeit one dollar
+Counterfeit one hundred dollars
+Counterfeit one hundred peso
+Counterfeit one hundred taiwan dollar
+Counterfeit one thousand peso
+Counterfeit one thousand taiwan dollar
+Counterfeit one thousand won
+Counterfeit one thousand yen
+Counterfeit ten dollar
+Counterfeit ten thousand won
+Counterfeit ten thousand yen
+Counterfeit twenty dollars
+Counterfeit twenty peso
+Counterfeit two dollars
+Counterfeit two hundred peso
+Genuine fifty dollars
+Genuine fifty peso
 Genuine fifty thousand won
-Genuine five dollars back
-Genuine five dollars front
+Genuine five dollars
+Genuine five hundred peso
+Genuine five hundred taiwan dollar
 Genuine five thousand won
 Genuine five thousand yen
-Genuine one dollar back
-Genuine one dollar front
+Genuine one dollar
+Genuine one hundred dollars
+Genuine one hundred peso
+Genuine one hundred taiwan dollar
+Genuine one thousand peso
+Genuine one thousand taiwan dollar
 Genuine one thousand won
 Genuine one thousand yen
-Genuine ten dollars back
-Genuine ten dollars front
+Genuine ten dollars
 Genuine ten thousand won
 Genuine ten thousand yen
-Genuine twenty dollars back
-Genuine twenty dollars front
-Genuine two thousand yen
+Genuine twenty dollars
+Genuine twenty peso
+Genuine two dollars
+Genuine two hundred peso

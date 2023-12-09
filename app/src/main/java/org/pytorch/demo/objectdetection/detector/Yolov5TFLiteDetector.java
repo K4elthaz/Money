@@ -44,11 +44,11 @@ public class Yolov5TFLiteDetector {
     private final float DETECT_THRESHOLD = 0.2f;
     private final float IOU_THRESHOLD = 0.45f;
     private final float IOU_CLASS_DUPLICATED_THRESHOLD = 0.5f;
-    private final String MODEL_YOLOV5S = "best-fp16.tflite";
+    private final String MODEL_YOLOV5S = "best-fp16640.tflite";
 //    private final String MODEL_YOLOV5S = "yolov5s-dynamic.tflite";
-    private final String MODEL_YOLOV5N =  "best-fp16.tflite";
-    private final String MODEL_YOLOV5M = "best-fp16.tflite";
-    private final String MODEL_YOLOV5S_INT8 = "best-fp16.tflite";
+    private final String MODEL_YOLOV5N =  "best-fp16640.tflite";
+    private final String MODEL_YOLOV5M = "best-fp16640.tflite";
+    private final String MODEL_YOLOV5S_INT8 = "best-fp16640.tflite";
     private final String LABEL_FILE = "coco_label.txt";
     MetadataExtractor.QuantizationParams input5SINT8QuantParams = new MetadataExtractor.QuantizationParams(0.003921568859368563f, 0);
     MetadataExtractor.QuantizationParams output5SINT8QuantParams = new MetadataExtractor.QuantizationParams(0.006305381190031767f, 5);
