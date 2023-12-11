@@ -385,7 +385,6 @@ public class ActivityManual extends AppCompatActivity {
                         }
 
                         mImageView.setImageBitmap(mBitmap);
-                        mImageView.setBackground(null);
                     }
                     break;
                 case 1: // photo loaded from gallery
@@ -402,7 +401,6 @@ public class ActivityManual extends AppCompatActivity {
                                 cursor.close();
                                 mBitmap = BitmapFactory.decodeFile(picturePath);
                                 mImageView.setImageBitmap(mBitmap);
-                                mImageView.setBackground(null);
                                 cursor.close();
                             }
                         }
