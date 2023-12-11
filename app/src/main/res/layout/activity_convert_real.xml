@@ -75,7 +75,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activityresutltscan1"
-        app:layout_constraintVertical_bias="0.064">
+        app:layout_constraintVertical_bias="0.196">
 
         <EditText
             android:id="@+id/fromCurrency"
@@ -96,10 +96,10 @@
             android:id="@+id/fromDropdown"
             android:layout_width="133dp"
             android:layout_height="36dp"
-            android:popupTheme="@style/SpinnerDropdown"
             android:layout_marginStart="25dp"
-            android:entries="@array/currency_options"
             android:background="@color/color_green"
+            android:entries="@array/currency_options"
+            android:popupTheme="@style/SpinnerDropdown"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -107,7 +107,6 @@
             app:layout_constraintTop_toBottomOf="@+id/activityresutltscan1"
             app:layout_constraintVertical_bias="0.218" />
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/linearLayout4"

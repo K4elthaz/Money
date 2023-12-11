@@ -273,7 +273,7 @@ public class ScanResultActivity extends AppCompatActivity {
             wrongIcon.setImageResource(R.drawable.right1);
         } else if (cleanedContent.equalsIgnoreCase("Genuine fifty dollars")) {
             currecnyresult.setText("Dollar");
-            valueresult.setText("50000");
+            valueresult.setText("50");
             wrongIcon.setImageResource(R.drawable.right1);
 //        } else if (cleanedContent.equalsIgnoreCase("Genuine twenty dollars back")) {
 //            currecnyresult.setText("Dollars");

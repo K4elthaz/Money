@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -32,18 +34,39 @@ public class convert_real extends AppCompatActivity {
     Spinner fromDropdown, toDropdown;
     String fromCurrency, toCurrency;
 
-//    TextView valuerestxts;
-
     void setupListeners() {
-        fromDropdown.setOnItemSelectedListener(new FromDropdown());
-        toDropdown.setOnItemSelectedListener(new ToDropdown());
+        fromDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                fromCurrency = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        toDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                toCurrency = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
+                convertButton.startAnimation(scaleAnimation);
                 if (!isNetworkConnected()) {
                     Toast.makeText(convert_real.this, "Host unreachable, check your internet connection and try again", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                if (fromCurrency == toCurrency) {
+                if (fromCurrency.equals(toCurrency)) {
                     Toast.makeText(convert_real.this, "from and to values are same.", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (fromInput.getText().toString().isEmpty()) {
@@ -84,12 +107,13 @@ public class convert_real extends AppCompatActivity {
         sideb = findViewById(R.id.sidemenubar);
         hbtn = findViewById(R.id.homebtnimg);
         bbtn = findViewById(R.id.backbtnimg);
-
-//        valuerestxts = findViewById(R.id.valuerestxt);
-        setupListeners();
-
-
         navMenu.setVisibility(View.GONE);
+        setupListeners();
+        initializeDefaultSpinner();
+        String currencyResult = getIntent().getStringExtra("currencyResult");
+        if (currencyResult != null) {
+            updateSpinnerBasedOnCurrency(currencyResult);
+        }
 
         // MENU BAR BTN CLICK LISTENERS
         icon1.setOnClickListener(new View.OnClickListener() {
@@ -163,80 +187,83 @@ public class convert_real extends AppCompatActivity {
         }
     }
 
-    class FromDropdown implements AdapterView.OnItemSelectedListener {
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            fromCurrency = parent.getItemAtPosition(position).toString();
-
-            String currencyResult = getIntent().getStringExtra("currencyResult");
-
-
-            if ("Pesos".equals(currencyResult)) {
-                // Change entries to currency_pesos
-                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                        convert_real.this,
-                        R.array.currency_pesos,
-                        android.R.layout.simple_spinner_item
-                );
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                fromDropdown.setAdapter(adapter);
-            }
-            else if ("Rupees".equals(currencyResult)) {
-                // Change entries to currency_pesos
-                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                        convert_real.this,
-                        R.array.currency_rupees,
-                        android.R.layout.simple_spinner_item
-                );
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                fromDropdown.setAdapter(adapter);
-            }
-            else if ("Won".equals(currencyResult)) {
-                // Change entries to currency_pesos
-                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                        convert_real.this,
-                        R.array.currency_won,
-                        android.R.layout.simple_spinner_item
-                );
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                fromDropdown.setAdapter(adapter);
-            }
-            else if ("Yen".equals(currencyResult)) {
-                // Change entries to currency_pesos
-                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                        convert_real.this,
-                        R.array.currency_yen,
-                        android.R.layout.simple_spinner_item
-                );
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                fromDropdown.setAdapter(adapter);
-            }
-            else if ("Dollars".equals(currencyResult)) {
-                // Change entries to currency_pesos
-                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                        convert_real.this,
-                        R.array.currency_dollars,
-                        android.R.layout.simple_spinner_item
-                );
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                fromDropdown.setAdapter(adapter);
-            }
-            else {
-                // Change entries to currency_options
-                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                        convert_real.this,
-                        R.array.currency_options,
-                        android.R.layout.simple_spinner_item
-                );
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                fromDropdown.setAdapter(adapter);
-            }
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-        }
-    }
+//    class FromDropdown implements AdapterView.OnItemSelectedListener {
+//        @Override
+//        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//            fromCurrency = parent.getItemAtPosition(position).toString();
+//            initializeDefaultSpinner();
+//            String currencyResult = getIntent().getStringExtra("currencyResult");
+//            if (currencyResult != null) {
+//                updateSpinnerBasedOnCurrency(currencyResult);
+//            }
+//
+//
+//            if ("Pesos".equals(currencyResult)) {
+//                // Change entries to currency_pesos
+//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                        convert_real.this,
+//                        R.array.currency_pesos,
+//                        android.R.layout.simple_spinner_item
+//                );
+//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                fromDropdown.setAdapter(adapter);
+//            }
+//            else if ("Rupees".equals(currencyResult)) {
+//                // Change entries to currency_pesos
+//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                        convert_real.this,
+//                        R.array.currency_rupees,
+//                        android.R.layout.simple_spinner_item
+//                );
+//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                fromDropdown.setAdapter(adapter);
+//            }
+//            else if ("Won".equals(currencyResult)) {
+//                // Change entries to currency_pesos
+//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                        convert_real.this,
+//                        R.array.currency_won,
+//                        android.R.layout.simple_spinner_item
+//                );
+//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                fromDropdown.setAdapter(adapter);
+//            }
+//            else if ("Yen".equals(currencyResult)) {
+//                // Change entries to currency_pesos
+//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                        convert_real.this,
+//                        R.array.currency_yen,
+//                        android.R.layout.simple_spinner_item
+//                );
+//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                fromDropdown.setAdapter(adapter);
+//            }
+//            else if ("Dollars".equals(currencyResult)) {
+//                // Change entries to currency_pesos
+//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                        convert_real.this,
+//                        R.array.currency_dollars,
+//                        android.R.layout.simple_spinner_item
+//                );
+//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                fromDropdown.setAdapter(adapter);
+//            }
+//            else {
+//                // Change entries to currency_options
+//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                        convert_real.this,
+//                        R.array.currency_options,
+//                        android.R.layout.simple_spinner_item
+//                );
+//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                fromDropdown.setAdapter(adapter);
+//            }
+//        }
+//
+//        @Override
+//        public void onNothingSelected(AdapterView<?> parent) {
+//        }
+//    }
 
 
     class ToDropdown implements AdapterView.OnItemSelectedListener {
@@ -291,6 +318,59 @@ public class convert_real extends AppCompatActivity {
             super.onPostExecute(v);
         }
     }
+    private void initializeDefaultSpinner() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.currency_options, // Default spinner data
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        fromDropdown.setAdapter(adapter);
+    }
+
+    private void updateSpinnerBasedOnCurrency(String currencyResult) {
+        ArrayAdapter<CharSequence> adapter;
+
+        switch (currencyResult) {
+            case "Pesos":
+                adapter = ArrayAdapter.createFromResource(
+                        this,
+                        R.array.currency_pesos,
+                        android.R.layout.simple_spinner_item);
+                break;
+            case "Rupees":
+                adapter = ArrayAdapter.createFromResource(
+                        this,
+                        R.array.currency_rupees,
+                        android.R.layout.simple_spinner_item);
+                break;
+            case "Won":
+                adapter = ArrayAdapter.createFromResource(
+                        this,
+                        R.array.currency_won,
+                        android.R.layout.simple_spinner_item);
+                break;
+            case "Yen":
+                adapter = ArrayAdapter.createFromResource(
+                        this,
+                        R.array.currency_yen,
+                        android.R.layout.simple_spinner_item);
+                break;
+            case "Dollars":
+                adapter = ArrayAdapter.createFromResource(
+                        this,
+                        R.array.currency_dollars,
+                        android.R.layout.simple_spinner_item);
+                break;
+            default:
+                adapter = ArrayAdapter.createFromResource(
+                        this,
+                        R.array.currency_options,
+                        android.R.layout.simple_spinner_item);
+        }
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        fromDropdown.setAdapter(adapter);
+    }
+
 }
-
-

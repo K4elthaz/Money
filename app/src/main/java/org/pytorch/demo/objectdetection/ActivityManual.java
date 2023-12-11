@@ -25,6 +25,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -183,6 +185,8 @@ public class ActivityManual extends AppCompatActivity {
         mProgressBar = findViewById(R.id.progressBar);
         mButtonDetect.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
+                mButtonDetect.startAnimation(scaleAnimation);
                 mButtonDetect.setEnabled(false);
                 mProgressBar.setVisibility(ProgressBar.VISIBLE);
 //                mButtonDetect.setText(getString(R.string.run_model));
@@ -236,7 +240,7 @@ public class ActivityManual extends AppCompatActivity {
         });
 
         try {
-            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "best640new.torchscript.ptl"));
+            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "best416V1.torchscript.ptl"));
             BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();

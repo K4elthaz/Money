@@ -85,26 +85,27 @@
 
     <ImageView
         android:id="@+id/frntbankNote"
-        android:layout_width="377dp"
-        android:layout_height="154dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="416dp"
+        android:layout_height="416dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:background="@drawable/up"
         android:contentDescription="@string/image_view"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1" />
 
     <org.pytorch.demo.objectdetection.ResultView
         android:id="@+id/resultView"
-        android:layout_width="366dp"
-        android:layout_height="162dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="394dp"
+        android:layout_height="308dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textViewDetect"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activitymanuallayout1"
         app:layout_constraintVertical_bias="0.0" />
@@ -114,13 +115,14 @@
         android:id="@+id/selectButton"
         android:layout_width="224dp"
         android:layout_height="83dp"
+        android:alpha=".0"
         android:background="@drawable/upload1"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="@+id/resultView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        android:alpha=".0"
-        app:layout_constraintTop_toTopOf="@+id/frntbankNote" />
+        app:layout_constraintTop_toTopOf="@+id/frntbankNote"
+        app:layout_constraintVertical_bias="0.738" />
 
     <TextView
         android:id="@+id/textView3"
@@ -154,7 +156,7 @@
     <ImageView
         android:id="@+id/backbankNote"
         android:layout_width="316dp"
-        android:layout_height="87dp"
+        android:layout_height="10dp"
         android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
 
@@ -195,6 +197,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/backbankNote" />
 
+    <!--    Comment this to hide the nav_drawer -->
+
     <LinearLayout
         android:id="@+id/verticalBtnsBox"
         android:layout_width="match_parent"
@@ -209,11 +213,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backbankNote"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.147">
 
 
         <!--        ETO NAMAN YUNG button sa para ma detect na nya yung nandun sa imageview -->
-
 
 
         <!--        <Button-->
@@ -231,14 +234,13 @@
             android:id="@+id/detectButton"
             android:layout_width="224dp"
             android:layout_height="83dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="1dp"
             android:background="@drawable/process1"
             android:onClick="onDetectButtonClick"
             tools:ignore="OnClick" />
 
     </LinearLayout>
 
-    <!--    Comment this to hide the nav_drawer -->
-  <include layout="@layout/nav_drawer" />
+    <include layout="@layout/nav_drawer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

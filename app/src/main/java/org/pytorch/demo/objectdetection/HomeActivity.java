@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -87,6 +89,8 @@ public class HomeActivity extends AppCompatActivity {
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
+                convertButton.startAnimation(scaleAnimation);
                 Intent i = new Intent(HomeActivity.this, convert_real.class);
                 startActivity(i);
             }
@@ -98,6 +102,8 @@ public class HomeActivity extends AppCompatActivity {
         live.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
+                live.startAnimation(scaleAnimation);
                 Intent i = new Intent(HomeActivity.this, MainActivity2.class);
                 startActivity(i);
             }
@@ -108,6 +114,8 @@ public class HomeActivity extends AppCompatActivity {
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
+                uploadBtn.startAnimation(scaleAnimation);
                 Intent i = new Intent(HomeActivity.this, ActivityManual.class);
                 startActivity(i);
             }
@@ -120,6 +128,8 @@ public class HomeActivity extends AppCompatActivity {
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
+                cameraButton.startAnimation(scaleAnimation);
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
                 if (cameraIntent.resolveActivity(getPackageManager()) != null) {
