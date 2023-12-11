@@ -20,9 +20,9 @@ class Result {
     Float score;
     Rect rect;
 
-    public Result(int cls, Float output, Rect rect) {
+    public Result(int cls, Rect rect) {
         this.classIndex = cls;
-        this.score = output;
+//        this.score = output;
         this.rect = rect;
     }
 };
@@ -164,7 +164,7 @@ public class PrePostProcessor {
                 }
                 classFound.add(cls);
                 Rect rect = new Rect((int)(startX+ivScaleX*left), (int)(startY+top*ivScaleY), (int)(startX+ivScaleX*right), (int)(startY+ivScaleY*bottom));
-                Result result = new Result(cls, outputs[i*mOutputColumn+4], rect);
+                Result result = new Result(cls, rect);
 
                 // Keep the result with the highest score
                 if (results.isEmpty() || outputs[i* mOutputColumn +4] > results.get(0).score) {
@@ -178,7 +178,7 @@ public class PrePostProcessor {
             Log.i("Detection", mClasses[cls]);
         }
         for (Result result : results) {
-            Log.i("Match:", mClasses[result.classIndex] + " " + String.valueOf(result.score) );
+            Log.i("Match:", mClasses[result.classIndex] );
         }
         return nonMaxSuppression(results, mNmsLimit, mThreshold);
     }
