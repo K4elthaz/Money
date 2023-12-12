@@ -42,6 +42,7 @@ public class DevelopersActivity extends AppCompatActivity {
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon1.setBackgroundResource(R.drawable.active_about);
                 Intent intent = new Intent(DevelopersActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
@@ -50,6 +51,7 @@ public class DevelopersActivity extends AppCompatActivity {
         icon2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon2.setBackgroundResource(R.drawable.active_guide);
                 Intent intent = new Intent(DevelopersActivity.this, UserGuideActivity.class);
                 startActivity(intent);
             }
@@ -58,6 +60,7 @@ public class DevelopersActivity extends AppCompatActivity {
         icon3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon3.setBackgroundResource(R.drawable.active_dev);
                 Intent intent = new Intent(DevelopersActivity.this, DevelopersActivity.class);
                 startActivity(intent);
             }

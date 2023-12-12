@@ -50,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon1.setBackgroundResource(R.drawable.active_about);
                 Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
@@ -58,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         icon2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon2.setBackgroundResource(R.drawable.active_guide);
                 Intent intent = new Intent(HomeActivity.this, UserGuideActivity.class);
                 startActivity(intent);
             }
@@ -66,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
         icon3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon3.setBackgroundResource(R.drawable.active_dev);
                 Intent intent = new Intent(HomeActivity.this, DevelopersActivity.class);
                 startActivity(intent);
             }
@@ -89,8 +92,7 @@ public class HomeActivity extends AppCompatActivity {
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
-                convertButton.startAnimation(scaleAnimation);
+                convertButton.setBackgroundResource(R.drawable.active_convert);
                 Intent i = new Intent(HomeActivity.this, convert_real.class);
                 startActivity(i);
             }
@@ -102,8 +104,7 @@ public class HomeActivity extends AppCompatActivity {
         live.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
-                live.startAnimation(scaleAnimation);
+                live.setBackgroundResource(R.drawable.active_live);
                 Intent i = new Intent(HomeActivity.this, MainActivity2.class);
                 startActivity(i);
             }
@@ -114,8 +115,7 @@ public class HomeActivity extends AppCompatActivity {
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
-                uploadBtn.startAnimation(scaleAnimation);
+                uploadBtn.setBackgroundResource(R.drawable.active_upload);
                 Intent i = new Intent(HomeActivity.this, ActivityManual.class);
                 startActivity(i);
             }
@@ -128,8 +128,7 @@ public class HomeActivity extends AppCompatActivity {
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
-                cameraButton.startAnimation(scaleAnimation);
+                cameraButton.setBackgroundResource(R.drawable.active_capture);
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
                 if (cameraIntent.resolveActivity(getPackageManager()) != null) {

@@ -2,6 +2,7 @@ package org.pytorch.demo.objectdetection;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
+import java.text.DecimalFormat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -60,8 +61,6 @@ public class convert_real extends AppCompatActivity {
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
-                convertButton.startAnimation(scaleAnimation);
                 if (!isNetworkConnected()) {
                     Toast.makeText(convert_real.this, "Host unreachable, check your internet connection and try again", Toast.LENGTH_SHORT).show();
                     return;
@@ -119,6 +118,7 @@ public class convert_real extends AppCompatActivity {
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon1.setBackgroundResource(R.drawable.active_about);
                 Intent intent = new Intent(convert_real.this, AboutActivity.class);
                 startActivity(intent);
             }
@@ -127,6 +127,7 @@ public class convert_real extends AppCompatActivity {
         icon2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon2.setBackgroundResource(R.drawable.active_guide);
                 Intent intent = new Intent(convert_real.this, UserGuideActivity.class);
                 startActivity(intent);
             }
@@ -135,6 +136,7 @@ public class convert_real extends AppCompatActivity {
         icon3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                icon3.setBackgroundResource(R.drawable.active_dev);
                 Intent intent = new Intent(convert_real.this, DevelopersActivity.class);
                 startActivity(intent);
             }
@@ -187,85 +189,6 @@ public class convert_real extends AppCompatActivity {
         }
     }
 
-//    class FromDropdown implements AdapterView.OnItemSelectedListener {
-//        @Override
-//        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//            fromCurrency = parent.getItemAtPosition(position).toString();
-//            initializeDefaultSpinner();
-//            String currencyResult = getIntent().getStringExtra("currencyResult");
-//            if (currencyResult != null) {
-//                updateSpinnerBasedOnCurrency(currencyResult);
-//            }
-//
-//
-//            if ("Pesos".equals(currencyResult)) {
-//                // Change entries to currency_pesos
-//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-//                        convert_real.this,
-//                        R.array.currency_pesos,
-//                        android.R.layout.simple_spinner_item
-//                );
-//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                fromDropdown.setAdapter(adapter);
-//            }
-//            else if ("Rupees".equals(currencyResult)) {
-//                // Change entries to currency_pesos
-//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-//                        convert_real.this,
-//                        R.array.currency_rupees,
-//                        android.R.layout.simple_spinner_item
-//                );
-//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                fromDropdown.setAdapter(adapter);
-//            }
-//            else if ("Won".equals(currencyResult)) {
-//                // Change entries to currency_pesos
-//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-//                        convert_real.this,
-//                        R.array.currency_won,
-//                        android.R.layout.simple_spinner_item
-//                );
-//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                fromDropdown.setAdapter(adapter);
-//            }
-//            else if ("Yen".equals(currencyResult)) {
-//                // Change entries to currency_pesos
-//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-//                        convert_real.this,
-//                        R.array.currency_yen,
-//                        android.R.layout.simple_spinner_item
-//                );
-//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                fromDropdown.setAdapter(adapter);
-//            }
-//            else if ("Dollars".equals(currencyResult)) {
-//                // Change entries to currency_pesos
-//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-//                        convert_real.this,
-//                        R.array.currency_dollars,
-//                        android.R.layout.simple_spinner_item
-//                );
-//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                fromDropdown.setAdapter(adapter);
-//            }
-//            else {
-//                // Change entries to currency_options
-//                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-//                        convert_real.this,
-//                        R.array.currency_options,
-//                        android.R.layout.simple_spinner_item
-//                );
-//                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                fromDropdown.setAdapter(adapter);
-//            }
-//        }
-//
-//        @Override
-//        public void onNothingSelected(AdapterView<?> parent) {
-//        }
-//    }
-
-
     class ToDropdown implements AdapterView.OnItemSelectedListener {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -310,7 +233,10 @@ public class convert_real extends AppCompatActivity {
                 showToast("Something went wrong " + error);
             }
             try {
-                toOutput.setText(new JSONObject(apiResponse).getJSONObject("rates").getString(toCurrency));
+                double convertedValue = Double.parseDouble(new JSONObject(apiResponse).getJSONObject("rates").getString(toCurrency));
+                DecimalFormat decimalFormat = new DecimalFormat("#.##"); // Format to two decimal places
+                String formattedValue = decimalFormat.format(convertedValue);
+                toOutput.setText(formattedValue);
             } catch (Exception e) {
                 showToast("Something went wrong " + e.toString());
             }
