@@ -311,6 +311,7 @@ public class ActivityManual extends AppCompatActivity {
                 bckNT.setVisibility(View.VISIBLE);
                 txt1.setVisibility(View.VISIBLE);
                 txt2.setVisibility(View.VISIBLE);
+                mResultView.setVisibility(View.VISIBLE);
             }
         });
 
@@ -330,6 +331,24 @@ public class ActivityManual extends AppCompatActivity {
                 onBackPressed();
             }
         });
+    }
+
+    public void openNavMenu(View view) {
+        if (navMenu.getVisibility() == View.VISIBLE) {
+            navMenu.setVisibility(View.GONE);
+        } else {
+            navMenu.setVisibility(View.VISIBLE);
+            sideb.setVisibility(View.GONE);
+            hb.setVisibility(View.GONE);
+            bb.setVisibility(View.GONE);
+            sBtn.setVisibility(View.GONE);
+            dBtn.setVisibility(View.GONE);
+            frnNT.setVisibility(View.GONE);
+            bckNT.setVisibility(View.GONE);
+            txt1.setVisibility(View.GONE);
+            txt2.setVisibility(View.GONE);
+            mResultView.setVisibility(View.GONE);
+        }
     }
 
     // Generate the content for the TextView in ScanResultActivity

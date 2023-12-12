@@ -82,6 +82,7 @@ public class HomeActivity extends AppCompatActivity {
                 capb.setVisibility(View.VISIBLE);
                 upb.setVisibility(View.VISIBLE);
                 conb.setVisibility(View.VISIBLE);
+                live.setVisibility(View.VISIBLE);
             }
         });
 
@@ -149,6 +150,7 @@ public class HomeActivity extends AppCompatActivity {
             capb.setVisibility(View.GONE);
             upb.setVisibility(View.GONE);
             conb.setVisibility(View.GONE);
+            live.setVisibility(View.GONE);
         }
     }
 
