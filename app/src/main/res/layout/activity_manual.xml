@@ -85,9 +85,9 @@
 
     <ImageView
         android:id="@+id/frntbankNote"
-        android:layout_width="416dp"
-        android:layout_height="416dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="407dp"
+        android:layout_height="268dp"
+        android:layout_marginTop="50dp"
         android:adjustViewBounds="true"
         android:background="@drawable/up"
         android:contentDescription="@string/image_view"
@@ -100,8 +100,8 @@
     <org.pytorch.demo.objectdetection.ResultView
         android:id="@+id/resultView"
         android:layout_width="394dp"
-        android:layout_height="308dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="269dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintBottom_toTopOf="@+id/textViewDetect"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,16 +113,15 @@
 
     <Button
         android:id="@+id/selectButton"
-        android:layout_width="224dp"
-        android:layout_height="83dp"
+        android:layout_width="278dp"
+        android:layout_height="177dp"
         android:alpha=".0"
         android:background="@drawable/upload1"
         app:layout_constraintBottom_toBottomOf="@+id/resultView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frntbankNote"
-        app:layout_constraintVertical_bias="0.738" />
+        app:layout_constraintTop_toTopOf="@+id/frntbankNote" />
 
     <TextView
         android:id="@+id/textView3"

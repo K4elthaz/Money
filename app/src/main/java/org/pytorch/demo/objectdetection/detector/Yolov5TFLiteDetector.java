@@ -41,7 +41,7 @@ public class Yolov5TFLiteDetector {
     private final Size INPNUT_SIZE = new Size(640, 640);
     private final int[] OUTPUT_SIZE = new int[]{1, 25200, 51};
     private Boolean IS_INT8 = false;
-    private final float DETECT_THRESHOLD = 0.2f;
+    private final float DETECT_THRESHOLD = 0.5f;
     private final float IOU_THRESHOLD = 0.45f;
     private final float IOU_CLASS_DUPLICATED_THRESHOLD = 0.5f;
     private final String MODEL_YOLOV5S = "best-fp16640.tflite";

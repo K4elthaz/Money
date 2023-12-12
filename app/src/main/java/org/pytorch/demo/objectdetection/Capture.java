@@ -19,6 +19,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
@@ -135,9 +136,11 @@ public class Capture extends AppCompatActivity {
                 mBitmap = Bitmap.createBitmap(capturedImage, 0, 0, capturedImage.getWidth(), capturedImage.getHeight(), matrix, true);
             } else {
                 mBitmap = capturedImage;
+
             }
 
             mImageView.setImageBitmap(mBitmap);
+            mImageView.setBackgroundColor(Color.TRANSPARENT);
             mButtonDetect = findViewById(R.id.detectButton);
             mButtonDetect.postDelayed(new Runnable() {
                 @Override
@@ -347,10 +350,7 @@ public class Capture extends AppCompatActivity {
             String labelDetected = PrePostProcessor.mClasses[result.classIndex];
             labelDetected = labelDetected.replace("_", " ");
             labelDetected = labelDetected.toUpperCase();
-            textViewContent.append(labelDetected)
-                    .append("  ")
-                    .append(String.valueOf(Math.round(result.score * 10000) / 100))
-                    .append("%\n");
+            textViewContent.append(labelDetected).append("\n");
         }
         return textViewContent.toString();
     }
