@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,30 +48,78 @@ public class HomeActivity extends AppCompatActivity {
         live = findViewById(R.id.live);
 
 //        MENU BAR BTN CLICKLISTINER
+//        ABOUT
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                icon1.setBackgroundResource(R.drawable.active_about);
+//                Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
+//                startActivity(intent);
                 icon1.setBackgroundResource(R.drawable.active_about);
-                Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
-                startActivity(intent);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon1.setBackgroundResource(R.drawable.about1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(HomeActivity.this, AboutActivity.class);
+                startActivity(i);
             }
         });
 
+//      UserGuide
         icon2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                icon2.setBackgroundResource(R.drawable.active_guide);
+//                Intent intent = new Intent(HomeActivity.this, UserGuideActivity.class);
+//                startActivity(intent);
+                // Change the background resource
                 icon2.setBackgroundResource(R.drawable.active_guide);
-                Intent intent = new Intent(HomeActivity.this, UserGuideActivity.class);
-                startActivity(intent);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon3.setBackgroundResource(R.drawable.userguide1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(HomeActivity.this, UserGuideActivity.class);
+                startActivity(i);
             }
         });
 
+        //      Developers
         icon3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                icon3.setBackgroundResource(R.drawable.active_dev);
+//                Intent intent = new Intent(HomeActivity.this, DevelopersActivity.class);
+//                startActivity(intent);
+
+                // Change the background resource
                 icon3.setBackgroundResource(R.drawable.active_dev);
-                Intent intent = new Intent(HomeActivity.this, DevelopersActivity.class);
-                startActivity(intent);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon3.setBackgroundResource(R.drawable.developers1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(HomeActivity.this, DevelopersActivity.class);
+                startActivity(i);
             }
         });
 
@@ -93,7 +142,22 @@ public class HomeActivity extends AppCompatActivity {
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                convertButton.setBackgroundResource(R.drawable.active_convert);
+//                Intent i = new Intent(HomeActivity.this, convert_real.class);
+//                startActivity(i);
+                // Change the background resource
                 convertButton.setBackgroundResource(R.drawable.active_convert);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        convertButton.setBackgroundResource(R.drawable.convert1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
                 Intent i = new Intent(HomeActivity.this, convert_real.class);
                 startActivity(i);
             }
@@ -105,7 +169,23 @@ public class HomeActivity extends AppCompatActivity {
         live.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                live.setBackgroundResource(R.drawable.active_live);
+//                Intent i = new Intent(HomeActivity.this, MainActivity2.class);
+//                startActivity(i);
+
+                // Change the background resource
                 live.setBackgroundResource(R.drawable.active_live);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        live.setBackgroundResource(R.drawable.live);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
                 Intent i = new Intent(HomeActivity.this, MainActivity2.class);
                 startActivity(i);
             }
@@ -116,9 +196,31 @@ public class HomeActivity extends AppCompatActivity {
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uploadBtn.setBackgroundResource(R.drawable.active_upload);
-                Intent i = new Intent(HomeActivity.this, ActivityManual.class);
-                startActivity(i);
+//                uploadBtn.setBackgroundResource(R.drawable.active_upload);
+//                Intent i = new Intent(HomeActivity.this, ActivityManual.class);
+//                startActivity(i);
+
+                uploadBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Change the background resource
+                        uploadBtn.setBackgroundResource(R.drawable.active_upload);
+
+                        // Delayed task to reset the background after a few seconds
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Reset the background resource after the delay
+                                uploadBtn.setBackgroundResource(R.drawable.upload1);
+                            }
+                        }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                        // Start the new activity immediately
+                        Intent i = new Intent(HomeActivity.this, ActivityManual.class);
+                        startActivity(i);
+                    }
+                });
+
             }
         });
 //         Diko alam kung ano to pero pagka meron kasi nito naka comment di ko marun yung activity manual pag pinindot yung upload btn
@@ -129,7 +231,25 @@ public class HomeActivity extends AppCompatActivity {
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                cameraButton.setBackgroundResource(R.drawable.active_capture);
+//                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//
+//                if (cameraIntent.resolveActivity(getPackageManager()) != null) {
+//                    startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
+//                }
+
+                // Change the background resource
                 cameraButton.setBackgroundResource(R.drawable.active_capture);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        cameraButton.setBackgroundResource(R.drawable.capture1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
                 if (cameraIntent.resolveActivity(getPackageManager()) != null) {

@@ -131,4 +131,11 @@ public class UserGuideActivity extends AppCompatActivity {
             capture6.setVisibility(View.GONE);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(UserGuideActivity.this, HomeActivity.class);
+        startActivity(i);
+        super.onBackPressed();
+    }
 }

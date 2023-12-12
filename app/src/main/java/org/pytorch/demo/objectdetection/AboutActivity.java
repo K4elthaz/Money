@@ -115,4 +115,11 @@ public class AboutActivity extends AppCompatActivity {
             capture.setVisibility(View.GONE);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(AboutActivity.this, HomeActivity.class);
+        startActivity(i);
+        super.onBackPressed();
+    }
 }

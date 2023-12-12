@@ -109,4 +109,11 @@ public class DevelopersActivity extends AppCompatActivity {
             inf.setVisibility(View.GONE);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(DevelopersActivity.this, HomeActivity.class);
+        startActivity(i);
+        super.onBackPressed();
+    }
 }
