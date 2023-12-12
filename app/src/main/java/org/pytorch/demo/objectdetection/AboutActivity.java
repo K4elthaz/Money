@@ -7,10 +7,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -21,6 +23,8 @@ public class AboutActivity extends AppCompatActivity {
     private ImageView icon1,icon2,icon3,hide,sideb,hb,bb,box;
 
     private TextView inf,capture;
+
+    private boolean isInAboutState = true; // Add this variable
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +45,30 @@ public class AboutActivity extends AppCompatActivity {
         capture = findViewById(R.id.capture);
 
 //        MENU BAR BTN CLICKLISTINER
+//        icon1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                icon1.setBackgroundResource(R.drawable.active_about);
+//                Intent intent = new Intent(AboutActivity.this, AboutActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                icon1.setBackgroundResource(R.drawable.active_about);
-                Intent intent = new Intent(AboutActivity.this, AboutActivity.class);
-                startActivity(intent);
+                if (AboutActivity.this.getClass().equals(AboutActivity.class)) {
+                    // Current activity is already AboutActivity, show toast
+                    Toast.makeText(AboutActivity.this, "You are already in About", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Current activity is not AboutActivity, start AboutActivity
+//                    icon1.setBackgroundResource(R.drawable.active_about);
+//                    Intent intent = new Intent(AboutActivity.this, AboutActivity.class);
+//                    startActivity(intent);
+                }
             }
         });
+
 
         icon2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +133,15 @@ public class AboutActivity extends AppCompatActivity {
             box.setVisibility(View.GONE);
             inf.setVisibility(View.GONE);
             capture.setVisibility(View.GONE);
+
+            // Check if the current activity is AboutActivity
+            if (AboutActivity.this.getClass().equals(AboutActivity.class)) {
+                // If it is, set the background resource for icon1
+                icon1.setBackgroundResource(R.drawable.active_about);
+            } else {
+                // If it's not, you can handle other cases or leave it empty
+//                icon1.setBackgroundResource(R.drawable.about1);
+            }
         }
     }
 

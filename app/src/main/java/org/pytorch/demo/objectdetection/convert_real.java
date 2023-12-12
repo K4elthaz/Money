@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -118,27 +119,72 @@ public class convert_real extends AppCompatActivity {
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                icon1.setBackgroundResource(R.drawable.active_about);
+//                Intent intent = new Intent(convert_real.this, AboutActivity.class);
+//                startActivity(intent);
+
                 icon1.setBackgroundResource(R.drawable.active_about);
-                Intent intent = new Intent(convert_real.this, AboutActivity.class);
-                startActivity(intent);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon1.setBackgroundResource(R.drawable.about1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(convert_real.this, AboutActivity.class);
+                startActivity(i);
             }
         });
 
         icon2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                icon2.setBackgroundResource(R.drawable.active_guide);
+//                Intent intent = new Intent(convert_real.this, UserGuideActivity.class);
+//                startActivity(intent);
+
                 icon2.setBackgroundResource(R.drawable.active_guide);
-                Intent intent = new Intent(convert_real.this, UserGuideActivity.class);
-                startActivity(intent);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon2.setBackgroundResource(R.drawable.userguide1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(convert_real.this, UserGuideActivity.class);
+                startActivity(i);
             }
         });
 
         icon3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                icon3.setBackgroundResource(R.drawable.active_dev);
+//                Intent intent = new Intent(convert_real.this, DevelopersActivity.class);
+//                startActivity(intent);
+
                 icon3.setBackgroundResource(R.drawable.active_dev);
-                Intent intent = new Intent(convert_real.this, DevelopersActivity.class);
-                startActivity(intent);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon3.setBackgroundResource(R.drawable.developers1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(convert_real.this, DevelopersActivity.class);
+                startActivity(i);
             }
         });
 

@@ -1,11 +1,14 @@
 package org.pytorch.demo.objectdetection;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -30,6 +33,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private ImageView icon1,icon2,icon3,hide,sideb,capb,upb,conb,live;
 
+    LinearLayout linearLayout3, linearLayout4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +51,8 @@ public class HomeActivity extends AppCompatActivity {
         conb = findViewById(R.id.convertImgBtn);
         navMenu.setVisibility(View.GONE);
         live = findViewById(R.id.live);
+        linearLayout3 = findViewById(R.id.linearLayout3);
+        linearLayout4 = findViewById(R.id.linearLayout4);
 
 //        MENU BAR BTN CLICKLISTINER
 //        ABOUT
@@ -132,6 +139,8 @@ public class HomeActivity extends AppCompatActivity {
                 upb.setVisibility(View.VISIBLE);
                 conb.setVisibility(View.VISIBLE);
                 live.setVisibility(View.VISIBLE);
+                linearLayout3.setVisibility(View.VISIBLE);
+                linearLayout4.setVisibility(View.VISIBLE);
             }
         });
 
@@ -199,27 +208,20 @@ public class HomeActivity extends AppCompatActivity {
 //                uploadBtn.setBackgroundResource(R.drawable.active_upload);
 //                Intent i = new Intent(HomeActivity.this, ActivityManual.class);
 //                startActivity(i);
+                uploadBtn.setBackgroundResource(R.drawable.active_upload);
 
-                uploadBtn.setOnClickListener(new View.OnClickListener() {
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
                     @Override
-                    public void onClick(View view) {
-                        // Change the background resource
-                        uploadBtn.setBackgroundResource(R.drawable.active_upload);
-
-                        // Delayed task to reset the background after a few seconds
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                // Reset the background resource after the delay
-                                uploadBtn.setBackgroundResource(R.drawable.upload1);
-                            }
-                        }, 2000); // 2000 milliseconds (adjust the time as needed)
-
-                        // Start the new activity immediately
-                        Intent i = new Intent(HomeActivity.this, ActivityManual.class);
-                        startActivity(i);
+                    public void run() {
+                        // Reset the background resource after the delay
+                        uploadBtn.setBackgroundResource(R.drawable.upload1);
                     }
-                });
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(HomeActivity.this, ActivityManual.class);
+                startActivity(i);
 
             }
         });
@@ -271,6 +273,8 @@ public class HomeActivity extends AppCompatActivity {
             upb.setVisibility(View.GONE);
             conb.setVisibility(View.GONE);
             live.setVisibility(View.GONE);
+            linearLayout3.setVisibility(View.GONE);
+            linearLayout4.setVisibility(View.GONE);
         }
     }
 
@@ -290,5 +294,50 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause");
+//        sideb.setVisibility(View.VISIBLE);
+//        capb.setVisibility(View.VISIBLE);
+//        upb.setVisibility(View.VISIBLE);
+//        conb.setVisibility(View.VISIBLE);
+//        live.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop");
+        sideb.setVisibility(View.VISIBLE);
+        capb.setVisibility(View.VISIBLE);
+        upb.setVisibility(View.VISIBLE);
+        conb.setVisibility(View.VISIBLE);
+        live.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart");
+    }
 
 }

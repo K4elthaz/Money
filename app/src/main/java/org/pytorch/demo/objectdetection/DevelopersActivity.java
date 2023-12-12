@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -60,9 +61,14 @@ public class DevelopersActivity extends AppCompatActivity {
         icon3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                icon3.setBackgroundResource(R.drawable.active_dev);
-                Intent intent = new Intent(DevelopersActivity.this, DevelopersActivity.class);
-                startActivity(intent);
+//                icon3.setBackgroundResource(R.drawable.active_dev);
+//                Intent intent = new Intent(DevelopersActivity.this, DevelopersActivity.class);
+//                startActivity(intent);
+                if (DevelopersActivity.this.getClass().equals(DevelopersActivity.class)) {
+                    Toast.makeText(DevelopersActivity.this, "You are already in Developers", Toast.LENGTH_SHORT).show();
+                } else {
+
+                }
             }
         });
 
@@ -107,6 +113,12 @@ public class DevelopersActivity extends AppCompatActivity {
             bb.setVisibility(View.GONE);
             box.setVisibility(View.GONE);
             inf.setVisibility(View.GONE);
+
+            if (DevelopersActivity.this.getClass().equals(DevelopersActivity.class)) {
+                icon3.setBackgroundResource(R.drawable.active_dev);
+            } else {
+
+            }
         }
     }
 

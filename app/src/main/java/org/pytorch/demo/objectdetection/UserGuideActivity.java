@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -57,9 +58,15 @@ public class UserGuideActivity extends AppCompatActivity {
         icon2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                icon2.setBackgroundResource(R.drawable.active_guide);
-                Intent intent = new Intent(UserGuideActivity.this, UserGuideActivity.class);
-                startActivity(intent);
+//                icon2.setBackgroundResource(R.drawable.active_guide);
+//                Intent intent = new Intent(UserGuideActivity.this, UserGuideActivity.class);
+//                startActivity(intent);
+
+                if (UserGuideActivity.this.getClass().equals(UserGuideActivity.class)) {
+                    Toast.makeText(UserGuideActivity.this, "You are already in User Guide", Toast.LENGTH_SHORT).show();
+                } else {
+
+                }
             }
         });
 
@@ -129,6 +136,12 @@ public class UserGuideActivity extends AppCompatActivity {
             capture4.setVisibility(View.GONE);
             capture5.setVisibility(View.GONE);
             capture6.setVisibility(View.GONE);
+
+            if (UserGuideActivity.this.getClass().equals(UserGuideActivity.class)) {
+                icon2.setBackgroundResource(R.drawable.active_guide);
+            } else {
+
+            }
         }
     }
 

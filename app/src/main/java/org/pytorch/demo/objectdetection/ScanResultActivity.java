@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -63,24 +64,69 @@ public class ScanResultActivity extends AppCompatActivity {
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ScanResultActivity.this, AboutActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(ScanResultActivity.this, AboutActivity.class);
+//                startActivity(intent);
+
+                icon1.setBackgroundResource(R.drawable.active_about);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon1.setBackgroundResource(R.drawable.about1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(ScanResultActivity.this, AboutActivity.class);
+                startActivity(i);
             }
         });
 
         icon2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ScanResultActivity.this, UserGuideActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(ScanResultActivity.this, UserGuideActivity.class);
+//                startActivity(intent);
+
+                icon2.setBackgroundResource(R.drawable.active_guide);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon2.setBackgroundResource(R.drawable.userguide1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(ScanResultActivity.this, UserGuideActivity.class);
+                startActivity(i);
             }
         });
 
         icon3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ScanResultActivity.this, DevelopersActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(ScanResultActivity.this, DevelopersActivity.class);
+//                startActivity(intent);
+
+                icon3.setBackgroundResource(R.drawable.active_dev);
+
+                // Delayed task to reset the background after a few seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Reset the background resource after the delay
+                        icon3.setBackgroundResource(R.drawable.developers1);
+                    }
+                }, 2000); // 2000 milliseconds (adjust the time as needed)
+
+                // Start the new activity immediately
+                Intent i = new Intent(ScanResultActivity.this, DevelopersActivity.class);
+                startActivity(i);
             }
         });
 
