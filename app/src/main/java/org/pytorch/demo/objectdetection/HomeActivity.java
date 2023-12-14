@@ -273,8 +273,8 @@ public class HomeActivity extends AppCompatActivity {
             upb.setVisibility(View.GONE);
             conb.setVisibility(View.GONE);
             live.setVisibility(View.GONE);
-            linearLayout3.setVisibility(View.GONE);
-            linearLayout4.setVisibility(View.GONE);
+//            linearLayout3.setVisibility(View.GONE);
+//            linearLayout4.setVisibility(View.GONE);
         }
     }
 
