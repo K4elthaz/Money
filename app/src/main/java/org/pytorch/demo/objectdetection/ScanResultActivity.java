@@ -346,6 +346,10 @@ public class ScanResultActivity extends AppCompatActivity {
             currecnyresult.setText("Please scan it again \n It can be Counterfeit");
             valueresult.setText("Counterfeit");
             wrongIcon.setImageResource(R.drawable.wrong1);
+            TextView linkTextView = findViewById(R.id.link);
+            linkTextView.setText("Why it is a Counterfeit?");
+            linkTextView.setTextColor(Color.BLUE);
+            linkTextView.setClickable(true);
         }
     }
 
