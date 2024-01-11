@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         upb = findViewById(R.id.uploadImgBtn);
         conb = findViewById(R.id.convertImgBtn);
         navMenu.setVisibility(View.GONE);
-        live = findViewById(R.id.live);
+//        live = findViewById(R.id.live);
         linearLayout3 = findViewById(R.id.linearLayout3);
         linearLayout4 = findViewById(R.id.linearLayout4);
 
@@ -138,7 +139,7 @@ public class HomeActivity extends AppCompatActivity {
                 capb.setVisibility(View.VISIBLE);
                 upb.setVisibility(View.VISIBLE);
                 conb.setVisibility(View.VISIBLE);
-                live.setVisibility(View.VISIBLE);
+//                live.setVisibility(View.VISIBLE);
                 linearLayout3.setVisibility(View.VISIBLE);
                 linearLayout4.setVisibility(View.VISIBLE);
             }
@@ -175,30 +176,30 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        live.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//        live.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                live.setBackgroundResource(R.drawable.active_live);
+////                Intent i = new Intent(HomeActivity.this, MainActivity2.class);
+////                startActivity(i);
+//
+//                // Change the background resource
 //                live.setBackgroundResource(R.drawable.active_live);
+//
+//                // Delayed task to reset the background after a few seconds
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        // Reset the background resource after the delay
+//                        live.setBackgroundResource(R.drawable.live);
+//                    }
+//                }, 2000); // 2000 milliseconds (adjust the time as needed)
+//
+//                // Start the new activity immediately
 //                Intent i = new Intent(HomeActivity.this, MainActivity2.class);
 //                startActivity(i);
-
-                // Change the background resource
-                live.setBackgroundResource(R.drawable.active_live);
-
-                // Delayed task to reset the background after a few seconds
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Reset the background resource after the delay
-                        live.setBackgroundResource(R.drawable.live);
-                    }
-                }, 2000); // 2000 milliseconds (adjust the time as needed)
-
-                // Start the new activity immediately
-                Intent i = new Intent(HomeActivity.this, MainActivity2.class);
-                startActivity(i);
-            }
-        });
+//            }
+//        });
 
 //        UPLOAD BTN
         ImageView uploadBtn = findViewById(R.id.uploadImgBtn);
@@ -230,19 +231,35 @@ public class HomeActivity extends AppCompatActivity {
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         ImageView cameraButton = findViewById(R.id.captureImgBtn);
-        cameraButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                cameraButton.setBackgroundResource(R.drawable.active_capture);
+//        cameraButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Display a Toast message before proceeding
+//                Toast.makeText(getApplicationContext(), "Capture the money that it fills the entire screen", Toast.LENGTH_SHORT).show();
+//
+//                // Delayed task to reset the background after a few seconds
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        // Reset the background resource after the delay
+//                        cameraButton.setBackgroundResource(R.drawable.capture1);
+//                    }
+//                }, 2000); // 2000 milliseconds (adjust the time as needed)
+//
 //                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 //
 //                if (cameraIntent.resolveActivity(getPackageManager()) != null) {
 //                    startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
 //                }
+//            }
+//        });
 
-                // Change the background resource
-                cameraButton.setBackgroundResource(R.drawable.active_capture);
-
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                convertButton.setBackgroundResource(R.drawable.active_convert);
+//                Intent i = new Intent(HomeActivity.this, convert_real.class);
+//                startActivity(i);
                 // Delayed task to reset the background after a few seconds
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -252,13 +269,14 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 }, 2000); // 2000 milliseconds (adjust the time as needed)
 
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-                if (cameraIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
-                }
+                // Start the new activity immediately
+                Intent i = new Intent(HomeActivity.this, captureInfo.class);
+                startActivity(i);
             }
         });
+
+
+
     }
 
 // NAV VISIBLE AND GONE
@@ -272,7 +290,7 @@ public class HomeActivity extends AppCompatActivity {
             capb.setVisibility(View.GONE);
             upb.setVisibility(View.GONE);
             conb.setVisibility(View.GONE);
-            live.setVisibility(View.GONE);
+//            live.setVisibility(View.GONE);
 //            linearLayout3.setVisibility(View.GONE);
 //            linearLayout4.setVisibility(View.GONE);
         }
@@ -325,7 +343,7 @@ public class HomeActivity extends AppCompatActivity {
         capb.setVisibility(View.VISIBLE);
         upb.setVisibility(View.VISIBLE);
         conb.setVisibility(View.VISIBLE);
-        live.setVisibility(View.VISIBLE);
+//        live.setVisibility(View.VISIBLE);
     }
 
     @Override

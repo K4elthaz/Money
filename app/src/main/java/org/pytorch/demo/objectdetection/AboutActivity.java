@@ -44,15 +44,6 @@ public class AboutActivity extends AppCompatActivity {
         navMenu.setVisibility(View.GONE);
         capture = findViewById(R.id.capture);
 
-//        MENU BAR BTN CLICKLISTINER
-//        icon1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                icon1.setBackgroundResource(R.drawable.active_about);
-//                Intent intent = new Intent(AboutActivity.this, AboutActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override

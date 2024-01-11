@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".captureInfo"
+    android:background="@drawable/another_bg">
+
+    <LinearLayout
+        android:id="@+id/aboutlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/sidemenubar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            android:src="@drawable/baseline_menu_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck"
+            android:onClick="openNavMenu"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutlayout">
+
+        <ImageView
+            android:id="@+id/homebtnimg"
+            android:layout_width="109dp"
+            android:layout_height="40dp"
+            android:src="@drawable/home1"
+            android:layout_marginStart="15dp"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/backbtnimg"
+            android:layout_width="109dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back1"
+            android:layout_marginEnd="15dp"/>
+
+    </LinearLayout>
+
+    <!--    INFO TEXT HERE-->
+    <ImageView
+        android:id="@+id/boxed"
+        android:layout_width="339dp"
+        android:layout_height="452dp"
+        android:alpha="0.6"
+        android:background="@drawable/rounded_green_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutlayout1"
+        app:layout_constraintVertical_bias="0.394" />
+
+
+    <TextView
+        android:id="@+id/capture"
+        android:layout_width="317dp"
+        android:layout_height="324dp"
+        android:layout_gravity="start|bottom"
+        android:text="@string/capture"
+        android:textColor="@color/color_black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/boxed"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toTopOf="@+id/boxed"
+        app:layout_constraintVertical_bias="0.245" />
+
+    <ImageView
+        android:id="@+id/captureImgBtn"
+        android:layout_width="242dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="536dp"
+        android:background="@drawable/capture1"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="@+id/boxed"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/boxed"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--        Comment this to hide the nav_drawer -->
+    <include layout="@layout/nav_drawer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

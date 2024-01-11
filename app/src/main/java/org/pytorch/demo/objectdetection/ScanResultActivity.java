@@ -52,7 +52,7 @@ public class ScanResultActivity extends AppCompatActivity {
         linkTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://example.com";
+                String url = "https://banknoteinfo.net/security-features/";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
             }

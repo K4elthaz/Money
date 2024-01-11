@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">M-Detect</string>
+    <string name="app_name">MDect</string>
     <string name="description_en"></string>
     <string name="description_it"></string>
     <string name="image_view">Image View</string>
@@ -64,8 +64,35 @@
     Currencies Through Image Processing, which makes it simpler and more accessible for people
     and businesses to verify the legitimacy of their currency transactions, it has the potential to
     transform the way that foreign exchange currencies are now validated. Another feature of this
-    would be the currency converter.\n\nThis application is only limited for:\n •US dollar ($)\n•South Korean won (₩)\n•India rupiah(Rp)\n•New Taiwan dollar (NT$)\n•Yen (JP¥)\n•Philippine peso (₱)\n\nOther currencies may not
+    would be the currency converter.\n\nThis application is only limited for:\n •US dollar ($)\n•South Korean won (₩)\n•New Taiwan Dollar(NT$)\n•Yen (JP¥)\n•Philippine peso (₱)\n\nOther currencies may not
     work in this application</string>
+
+    <string name="capture">\n 1. Position the banknote within the camera frame. \n
+        \n 2. Tap on the camera icon to capture a clear image of the currency. \n
+        \n 3. Ensure proper lighting and alignment for accurate results. \n
+        \n 4. A green checkmark indicates an authentic banknote, while a red cross signals a potential counterfeit. \n
+        \n 5. Access educational resources on how to identify genuine banknotes. \n
+        </string>
+
+    <string name="dev">
+Development Team for "M-Dect: A Mobile Based Application for Detecting Counterfeit Foreign Exchange (Forex) Currencies":\n
+\n\n
+1. Lead Developers:\n
+         \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0Mary Ann Moneda\n
+         \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0Benita Muriel F. Montano\n\n
+
+2. UI/UX Designers:\n
+         \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0Mario Jr. M. Tunay\n
+         \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0Benita Muriel F. Montano\n\n
+
+3. Quality Assurance Testers:\n
+         \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0Mario Jr. M. Tunay\n
+         \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0Benita Muriel F. Montano\n
+         \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0 \u00A0\u00A0\u00A0Mary Ann Moneda\n\n\n
+
+Email: mdect_developer@gmail.com\n
+© 2024 MDect. All Rights Reserved.
+</string>
 
     <string name="menu_transform">Transform</string>
     <string name="menu_reflow">Reflow</string>

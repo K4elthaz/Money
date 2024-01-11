@@ -188,20 +188,20 @@ public class ActivityManual extends AppCompatActivity {
         mProgressBar = findViewById(R.id.progressBar);
         mButtonDetect.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
-                mButtonDetect.startAnimation(scaleAnimation);
+//                Animation scaleAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.scale);
+//                mButtonDetect.startAnimation(scaleAnimation);
                 mButtonDetect.setEnabled(false);
                 mProgressBar.setVisibility(ProgressBar.VISIBLE);
 //                mButtonDetect.setText(getString(R.string.run_model));
                 // Scale image to 320x320
-                mImgScaleX = (float) mBitmap.getWidth() / PrePostProcessor.mInputWidth;
-                mImgScaleY = (float) mBitmap.getHeight() / PrePostProcessor.mInputHeight;
-
-                mIvScaleX = (mBitmap.getWidth() > mBitmap.getHeight() ? (float) mImageView.getWidth() / mBitmap.getWidth() : (float) mImageView.getHeight() / mBitmap.getHeight());
-                mIvScaleY = (mBitmap.getHeight() > mBitmap.getWidth() ? (float) mImageView.getHeight() / mBitmap.getHeight() : (float) mImageView.getWidth() / mBitmap.getWidth());
-
-                mStartX = (mImageView.getWidth() - mIvScaleX * mBitmap.getWidth()) / 2;
-                mStartY = (mImageView.getHeight() - mIvScaleY * mBitmap.getHeight()) / 2;
+//                mImgScaleX = (float) mBitmap.getWidth() / PrePostProcessor.mInputWidth;
+//                mImgScaleY = (float) mBitmap.getHeight() / PrePostProcessor.mInputHeight;
+//
+//                mIvScaleX = (mBitmap.getWidth() > mBitmap.getHeight() ? (float) mImageView.getWidth() / mBitmap.getWidth() : (float) mImageView.getHeight() / mBitmap.getHeight());
+//                mIvScaleY = (mBitmap.getHeight() > mBitmap.getWidth() ? (float) mImageView.getHeight() / mBitmap.getHeight() : (float) mImageView.getWidth() / mBitmap.getWidth());
+//
+//                mStartX = (mImageView.getWidth() - mIvScaleX * mBitmap.getWidth()) / 2;
+//                mStartY = (mImageView.getHeight() - mIvScaleY * mBitmap.getHeight()) / 2;
 
                 // Run on a new Thread
                 Thread thread = new Thread(new Runnable() {
@@ -243,7 +243,7 @@ public class ActivityManual extends AppCompatActivity {
         });
 
         try {
-            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "best12416.torchscript.ptl"));
+            mModule = LiteModuleLoader.load(ActivityManual.assetFilePath(getApplicationContext(), "best416v69.torchscript.ptl"));
             BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();
